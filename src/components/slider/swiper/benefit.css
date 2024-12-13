@@ -1,0 +1,67 @@
+.swiper-button-prev-text,
+.swiper-button-next-text {
+    position: absolute;
+    top: var(--swiper-navigation-top-offset, 50%);
+    height: 40px;
+    width: 40px;
+    margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    background-color: #353F50;
+    color: var(--swiper-navigation-color, #E1E6ED);
+    border: var(--swiper-navigation-border, 1px solid #E1E6ED);
+}
+
+.swiper-button-prev-text.swiper-button-disabled,
+.swiper-button-next-text.swiper-button-disabled {
+    opacity: 0.35;
+    cursor: auto;
+    pointer-events: none;
+}
+
+.swiper-button-prev-text.swiper-button-hidden,
+.swiper-button-next-text.swiper-button-hidden {
+    opacity: 0;
+    cursor: auto;
+    pointer-events: none;
+}
+
+.swiper-navigation-disabled .swiper-button-prev-text,
+.swiper-navigation-disabled .swiper-button-next-text {
+    display: none !important;
+}
+
+.swiper-button-prev-text svg,
+.swiper-button-next-text svg {
+    width: 13.8px;
+    height: 13.8px;
+    object-fit: contain;
+    transform-origin: center;
+}
+
+.swiper-rtl .swiper-button-prev-text svg,
+.swiper-rtl .swiper-button-next-text svg {
+    transform: rotate(180deg);
+}
+
+.swiper-button-prev-text:after,
+.swiper-button-next-text:after {
+    font-family: swiper-icons;
+    font-size: var(--swiper-navigation-size);
+    text-transform: none !important;
+    letter-spacing: 0;
+    font-variant: initial;
+    line-height: 1;
+}
+
+.swiper-button-prev-text:after {
+    content: 'Previous';
+}
+
+.swiper-button-next-text:after {
+    content: 'Next';
+}

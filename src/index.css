@@ -1,0 +1,294 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;/* Commented imports (assuming these are handled elsewhere) */
+@import '@fontsource/geist-sans';
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  font-family: 'Geist Sans', sans-serif;
+  /* font-family: 'Galano Grotesque', sans-serif; */
+}
+.auto-container{
+  max-width: 1580px;
+}
+.mobile-menu {
+  transition: transform 0.5s ease-in-out;
+}
+.mobile-menu.open {
+  transform: translateX(0);
+}
+.mobile-menu.closed {
+  transform: translateX(100%);
+}
+.custom-blur-shadow {
+background: linear-gradient(160.22deg, rgba(255, 255, 255, 0.4) 5.08%, rgba(255, 255, 255, 0.1) 105.52%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+}
+.shape11 {
+  background: linear-gradient(180deg, #E50A11 -30.93%, #FFF173 113.08%);
+  /* backdrop-filter: blur(200px); */
+  /* Blurs what's behind the element */
+  filter: blur(126px);
+  /* Blurs the element itself */
+}
+
+.shape12 {
+  background: linear-gradient(180deg, rgba(49, 106, 255, 0.2) -30.93%, #A0DA7C 113.08%);
+  /* backdrop-filter: blur(200px); */
+  /* Blurs what's behind the element */
+  filter: blur(126px);
+  /* Blurs the element itself */
+  border: none;
+}
+.shape13{
+  background: linear-gradient(180deg, rgba(49, 106, 255, 0.2) -30.93%, #A0DA7C 113.08%);
+  /* backdrop-filter: blur(200px); */
+    /* Blurs what's behind the element */
+    filter: blur(126px);
+    /* Blurs the element itself */
+    border: none;
+}
+
+.shape14 {
+  background: linear-gradient(180deg, rgba(49, 106, 255, 0.2) -30.93%, #A0DA7C 113.08%);
+  
+  filter: blur(80px);
+}
+.shape15 {
+  background: linear-gradient(180deg, #E50A11 -10.93%, #FFF173 113.08%);
+  filter: blur(80px);
+}
+
+.gradient-border {
+  border: 1px solid transparent;
+  /* Transparent base for gradient border */
+  border-image-source: linear-gradient(155.24deg,
+      rgba(239, 232, 205, 0.2) -1.19%,
+      rgba(242, 241, 225, 0.2) 34.8%,
+      rgba(161, 40, 71, 0.2) 76.79%,
+      rgba(37, 83, 128, 0.2) 105.1%);
+  border-image-slice: 1;
+  /* Apply gradient along the border */
+  box-shadow: 0px 4px 24px -1px rgba(255, 255, 255, 0.25);
+  /* White shadow with transparency */
+  backdrop-filter: blur(-16px);
+  /* Blurs the background behind the element */
+  /* background: #41AAEC; */
+  /* Solid background color */
+}
+
+.gradient-border1 {
+  background: linear-gradient(87.55deg, #79BCF1 -2%, #1864A0 112.18%);
+}
+nav ul li  {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Galano Grotesque', sans-serif;
+  line-height: 21.6px;
+  text-align: center;
+}
+
+nav ul li span {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Galano Grotesque', sans-serif;
+  line-height: 21.6px;
+  text-align: center;
+}
+
+
+.back-to-top-box:hover .back-to-top {
+  position: relative;
+  top: -5px;
+}
+
+/* fonts */
+h1 {
+  font-size: 20px;
+  line-height: 52px;
+  text-align: center;
+  font-weight: 700;
+  font-family: 'Geist Sans', sans-serif;
+}
+
+h2 {
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 52px;
+  font-family: 'Geist Sans', sans-serif;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 48px;
+  font-weight: 175;
+  letter-spacing: -2%;
+  font-family: 'Geist Sans', sans-serif;
+}
+
+h4 {
+  font-size: 20px;
+  line-height: 52px;
+  font-weight: 176;
+  font-family: 'Geist Sans', sans-serif;
+}
+
+h5 {
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 800;
+  font-family: 'Geist Sans', sans-serif;
+}
+
+h6 {
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 800;
+  font-family: 'Geist Sans', sans-serif;
+}
+
+.txt {
+  font-size: 16px;
+  line-height: 19.84px;
+  font-weight: 500;
+  font-family: 'Geist Sans', sans-serif;
+}
+
+.txt2 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  font-family: 'Geist Sans', sans-serif;
+}
+
+.txt3 {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 500;
+  color: #9ABFF8;
+  font-family: 'Geist Sans', sans-serif;
+}
+
+.txt4 {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18.9px;
+  font-family: 'Geist Sans', sans-serif;
+}
+
+.txt5 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  font-family: 'Geist Sans', sans-serif;
+}
+
+.txt6 {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 700;
+  color: #05284C;
+  font-family: 'Geist Sans', sans-serif;
+}
+
+.txt7 {
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 700;
+  font-family: 'Geist Sans', sans-serif;
+}
+
+.txt8 {
+  font-size: 24px;
+  font-weight: 176;
+  line-height: 32px;
+  font-family: 'Geist Sans', sans-serif;
+}
+.txt9 {
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 700;
+  font-family: 'Galano Grotesque', sans-serif;
+}
+
+p {
+  font-weight: 400;
+  font-family: 'Geist Sans', sans-serif;
+
+}
+
+/* for all the arrow buttons */
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border: none !important;
+  font-size: 16px;
+  color: #3580F1;
+  border-radius: 6px !important;
+  cursor: pointer;
+  transition: all 0.3s ease !important;
+  line-height: 24px;
+  font-weight: 500;
+  font-family: 'Geist Sans', sans-serif;
+}
+
+.arrow:hover {
+  gap: 15px;
+  color: white;
+}
+
+/* for all the arrow buttons */
+
+/* table */
+table tr{
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  align-content: flex-start;
+  width: 100%;
+  gap: 30px;
+  width: 100%;
+  padding: 10px 10px;
+  border-bottom: solid 1px #F3F5F6;
+}
+
+table tbody {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  align-content: flex-start;
+  width: 100%;
+  gap: 30px;
+}
+table td,
+th {
+  display: flex;
+  justify-content: flex-start;
+  width: 200px;
+  
+}
+
+.counter {
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 700;
+  letter-spacing: -2%;
+  font-family: 'Goldplay', sans-serif;
+  color: #FFFFFF;
+
+}
+
+
+

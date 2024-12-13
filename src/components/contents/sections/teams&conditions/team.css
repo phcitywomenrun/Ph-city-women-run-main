@@ -1,0 +1,22 @@
+/* Styles for large screens */
+@media (min-width: 950px) {
+  .sidebar {
+    flex: 0 0 384px;
+  }
+
+.relative .sidebar-container{
+   overflow: visible;
+ } 
+
+  .sidebar {
+    position: -webkit-sticky;
+
+    position: sticky;
+    top: 204px;
+  }
+}
+
+.hero{
+  background: linear-gradient(0deg, #5C176F, #5C176F),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+}

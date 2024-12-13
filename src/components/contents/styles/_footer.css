@@ -1,0 +1,66 @@
+/****** form and button ****/
+.form-example333 {
+  position: relative;
+  top: 48px;
+}
+
+.form-example122 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-around;
+  align-items: baseline;
+}
+
+.subs-cribe {
+  border-radius: 15px;
+  border: 1px solid #c2c2c2;
+  background: var(--neutral-colors-color-300, #f9f9ff);
+  display: flex;
+  height: 44px;
+  width: 100%;
+  padding: 30px 30px;
+  align-items: flex-start;
+  gap: 305.909px;
+  font-family: "Metropolis", sans-serif;
+  flex-shrink: 0;
+}
+
+input,
+input::-webkit-input-placeholder {
+  font-size: 16px;
+  line-height: 2;
+font-family: 'Geist Sans', sans-serif;  
+}
+.mail-box {
+  width: 471px;
+  height: 66px;
+  flex-shrink: 0;
+}
+
+.groundText {
+  color: #102228;
+  text-align: center;
+  font-feature-settings:
+    "clig" off,
+    "liga" off;
+  font-family: "Montserrat";
+  font-size: 35.689px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48.436px; /* 135.714% */
+  text-align: center;
+  font-feature-settings:
+    "clig" off,
+    "liga" off;
+  font-family: "Metropolis", sans-serif;
+  font-size: 35.689px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48.436px; /* 135.714% */
+}
+
+
+
+/*************** end of form and button **************/
