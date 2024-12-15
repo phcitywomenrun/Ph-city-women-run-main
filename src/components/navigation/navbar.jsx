@@ -297,19 +297,19 @@ const Navbar = ({ openOverlay }) => {
                       ? "text-[#8D12AB]"
                       : "text-white"
                     : "text-[#8D12AB]"
-                }  ${toggle ? "hidden " : "block"}`}
+                }  `}
               />
             </div>
 
             {/* Mobile Menu */}
             {toggle && (
               <div
-                className={`mobile-menu  silver:hidden fixed top-0 right-0 flex flex-col items-end justify-start h-screen bg-black bg-opacity-90 text-white  w-full max-w-[300px] transition-transform transform ${
+                className={`mobile-menu  silver:hidden fixed top-0 left-0 flex flex-col items-start justify-start h-screen bg-[#000000dc]  text-white  w-full  transition-transform transform ${
                   toggle ? "translate-x-0" : "-translate-x-full"
                 }`}
               >
-                <div className="flex gap-10 flex-col justify-center items-end w-full mt-[80px]">
-                  <div className="flex justify-between items-center w-full pl-[70px] pr-4">
+                <div className="flex gap-10 flex-col justify-center items-start w-full h-screen bg-black max-w-[300px] ">
+                  <div className="flex justify-between items-end w-full  px-[20px]">
                     <Link to="/">
                       <img
                         src={logo1}
@@ -320,16 +320,10 @@ const Navbar = ({ openOverlay }) => {
                     <AiOutlineClose
                       onClick={closeMenu}
                       size={20}
-                      className={
-                        isHomePage || isTheRunPage
-                          ? scrolled
-                            ? "text-[#8D12AB]"
-                            : "text-white"
-                          : "text-[#8D12AB]"
-                      }
+                      className="text-white"
                     />
                   </div>
-                  <ul className="flex gap-2 flex-col items-end justify-center pl-[70px] text-lg w-full">
+                  <ul className="flex gap-2 flex-col items-start justify-center text-lg w-full pl-[20px]">
                     <li className="w-full">
                       <Link
                         className="!flex !w-full"
@@ -338,10 +332,14 @@ const Navbar = ({ openOverlay }) => {
                       >
                         <div
                           onClick={closeMenu}
-                          className={`flex justify-end items-start w-full py-[7px] p-[50px] border-soild bg-[#E6EFFD]  border-[1px] border-solid border-[#8D12AB] 
-                          ${activeLink === "/" ? "font-bold" : ""}`}
+                          className={`flex justify-start items-start w-full py-[8px]  border-soild 
+                          ${
+                            activeLink === "/"
+                              ? "font-extrabold border-r-[4px] border-solid border-r-[#8D12AB]"
+                              : ""
+                          }`}
                         >
-                          <span className="text-[#05284C] capitalize">
+                          <span className="text-[#FFFFFF] capitalize">
                             home
                           </span>
                         </div>
@@ -355,14 +353,14 @@ const Navbar = ({ openOverlay }) => {
                       >
                         <div
                           onClick={closeMenu}
-                          className={`flex justify-end items-start w-full py-[7px] p-[50px] border-soild bg-[#E6EFFD] border-[1px] border-solid border-[#8D12AB] 
+                          className={`flex justify-start items-start w-full py-[8px]  
                           ${
                             activeLink === "/about"
-                              ? "!font-bold text-[50px]"
+                              ? "!font-extrabold border-r-[4px] border-solid border-r-[#8D12AB]"
                               : ""
                           }`}
                         >
-                          <span className="text-[#05284C] capitalize">
+                          <span className="text-[#FFFFFF] capitalize">
                             the run
                           </span>
                         </div>
@@ -376,14 +374,14 @@ const Navbar = ({ openOverlay }) => {
                       >
                         <div
                           onClick={closeMenu}
-                          className={`flex justify-end items-start w-full py-[7px] p-[50px] border-soild bg-[#E6EFFD] border-[1px] border-solid border-[#8D12AB] 
+                          className={`flex justify-start items-start w-full py-[8px] "
                           ${
                             activeLink === "/Conference"
-                              ? "!font-bold text-[50px]"
+                              ? "!font-extrabold border-r-[4px] border-solid border-r-[#8D12AB]"
                               : ""
                           }`}
                         >
-                          <span className="text-[#05284C] capitalize">
+                          <span className="text-[#FFFFFF] capitalize">
                             Conference
                           </span>
                         </div>
@@ -397,14 +395,14 @@ const Navbar = ({ openOverlay }) => {
                       >
                         <div
                           onClick={closeMenu}
-                          className={`flex justify-end items-start w-full py-[7px] p-[50px] border-soild bg-[#E6EFFD] border-[1px] border-solid border-[#8D12AB] 
+                          className={`flex justify-start items-start w-full py-[8px]  
                           ${
                             activeLink === "/news"
-                              ? "!font-bold text-[50px]"
+                              ? "!font-extrabold border-r-[4px] border-solid border-r-[#8D12AB]"
                               : ""
                           }`}
                         >
-                          <span className="text-[#05284C] capitalize">
+                          <span className="text-[#FFFFFF] capitalize">
                             news
                           </span>
                         </div>
@@ -418,14 +416,14 @@ const Navbar = ({ openOverlay }) => {
                       >
                         <div
                           onClick={closeMenu}
-                          className={`flex justify-end items-start w-full py-[7px] p-[50px] border-soild bg-[#E6EFFD] border-[1px] border-solid border-[#8D12AB] 
+                          className={`flex justify-start items-start w-full py-[8px] 
                           ${
                             activeLink === "/post-Events"
-                              ? "!font-bold text-[50px]"
+                              ? "!font-extrabold border-r-[4px] border-solid border-r-[#8D12AB]"
                               : ""
                           }`}
                         >
-                          <span className="text-[#05284C] capitalize">
+                          <span className="text-[#FFFFFF] capitalize">
                             post Events
                           </span>
                         </div>
@@ -439,14 +437,14 @@ const Navbar = ({ openOverlay }) => {
                       >
                         <div
                           onClick={closeMenu}
-                          className={`flex justify-end items-start w-full py-[7px] p-[50px] border-soild bg-[#E6EFFD] border-[1px] border-solid border-[#8D12AB] 
+                          className={`flex justify-start items-start w-full py-[8px] border-soild
                           ${
                             activeLink === "/volunteer"
-                              ? "!font-bold text-[50px]"
+                              ? "!font-extrabold border-r-[4px] border-solid border-r-[#8D12AB]"
                               : ""
                           }`}
                         >
-                          <span className="text-[#05284C] capitalize">
+                          <span className="text-[#FFFFFF] capitalize">
                             volunteer
                           </span>
                         </div>
@@ -454,7 +452,7 @@ const Navbar = ({ openOverlay }) => {
                     </li>
 
                     <li className="w-full">
-                      <div className="flex w-ful ">
+                      <div className="flex w-full pr-[20px] ">
                         <Button
                           size="medium"
                           onClick={() => {

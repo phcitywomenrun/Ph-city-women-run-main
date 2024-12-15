@@ -6,36 +6,6 @@ import Image from "./7c709d8cb79c47c5101047070cd2dbd9.jpg";
 const SaveUrPotForm = ({ isOpen, closeOverlay }) => {
   if (!isOpen) return null;
 
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    gender: "",
-    dob: "",
-    phoneNumber: "",
-    altPhoneNumber: "",
-    homeAddress: "",
-    email: "",
-    volunteerExperience: "",
-    nextOfKinFirstName: "",
-    nextOfKinLastName: "",
-    shirtSize: "",
-    agreeToTerms: false,
-  });
-
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData({
-      ...formData,
-      [name]: type === "checkbox" ? checked : value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    onClose();
-  };
-
   return (
     <div
       className="overlay1  relative flex flex-col justify-end items-end bg-cover px-[15px] sm:px-[20px] silver:px-[200px] py-[20px] h-auto w-full  overflow-hidden"
@@ -64,124 +34,142 @@ const SaveUrPotForm = ({ isOpen, closeOverlay }) => {
             </div>
           </div>
           <div className="flex flex-col gap-[20px] w-full">
-            <form className="flex gap-[24px] flex-col" onSubmit={handleSubmit}>
-              <div className="flex gap-[10px] flex-col justify-center items-center w-full">
-                <div className="flex flex-col at500:flex-row justify-center items-center at500:space-x-3 w-full">
-                  <div className="w-full">
-                    <label>
-                      Select Run Category <em style={{ color: "red" }}>*</em>
-                    </label>
-                    <select
-                      name="shirtSize"
-                      value={formData.shirtSize}
-                      onChange={handleChange}
-                      required
-                    >
-                      <option value="">Single Race</option>
-                      <option value="small">5km Run</option>
-                      <option value="medium">10km Run</option>
-                    </select>
-                  </div>
-                  <div className="w-full"></div>
-                </div>
-                <div className="flex flex-col at500:flex-row justify-center items-center at500:space-x-3 w-full">
-                  <div className="w-full">
-                    <label>
-                      First name <em style={{ color: "red" }}>*</em>
-                    </label>
-                    <input
-                      type="text"
-                      name="firstName"
-                      placeholder="First Name"
-                      value={formData.firstName}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
+            <form
+              className="flex gap-[20px] flex-col"
+              action="https://forms.zohopublic.com/phcitywomenrunphcityw1/form/THERUNNINGEVENTSREGISTRATIONFORM/formperma/KtoqI_6vnk68oXQKHoHlAnE4Y5iNKrllHlPsQ4YxxKA/htmlRecords/submit"
+              name="form"
+              id="form"
+              method="POST"
+              acceptCharset="UTF-8"
+              encType="multipart/form-data"
+            >
+              <input type="hidden" name="zf_referrer_name" value="" />
+              <input type="hidden" name="zf_redirect_url" value="" />
+              <input type="hidden" name="zc_gad" value="" />
 
-                  <div className="w-full">
-                    <label>
-                      Last name <em style={{ color: "red" }}>*</em>
-                    </label>
-                    <input
-                      type="text"
-                      name="lastName"
-                      placeholder="Last Name"
-                      value={formData.lastName}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
+              {/* <h2>THE RUNNING EVENTS REGISTRATION FORM</h2> */}
+              <div className="flex flex-col at500:flex-row justify-center items-center at500:space-x-3 w-full">
+                <div className="w-full">
+                  <label>
+                    Select Run Category <em style={{ color: "red" }}>*</em>
+                  </label>
+                  <select name="Dropdown">
+                    <option value="-Select-" selected>
+                      Select -
+                    </option>
+                    <option value="5km Run">5km Run</option>
+                    <option value="10km Run">10km Run</option>
+                  </select>
                 </div>
-                <div className="flex flex-col at500:flex-row justify-center items-center at500:space-x-3 w-full">
-                  <div className="w-full">
-                    <label>
-                      Email Adresss <em style={{ color: "red" }}>*</em>
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Email Address"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <div className="w-full">
-                    <label>
-                      Phone Number <em style={{ color: "red" }}>*</em>
-                    </label>
-                    <input
-                      type="tel"
-                      name="phoneNumber"
-                      placeholder="Phone Number"
-                      value={formData.phoneNumber}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
+                <div className="w-full">
+                  <label>
+                    Date of Birth <em style={{ color: "red" }}>*</em>
+                  </label>
+                  <input
+                    type="text"
+                    name="Date"
+                    maxLength="25"
+                    placeholder="01-Dec-2024"
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col at500:flex-row justify-center items-center at500:space-x-3 w-full">
+                <div className="w-full">
+                  <label>
+                    First Name <em style={{ color: "red" }}>*</em>
+                  </label>
+                  <input
+                    type="text"
+                    maxLength="255"
+                    name="Name_First"
+                    placeholder="First Name"
+                  />
                 </div>
 
                 <div className="w-full">
                   <label>
-                    Home Address <em style={{ color: "red" }}>*</em>
+                    Last Name <em style={{ color: "red" }}>*</em>
                   </label>
                   <input
                     type="text"
-                    name="homeAddress"
-                    placeholder="Home Address"
-                    value={formData.homeAddress}
-                    onChange={handleChange}
-                    required
+                    maxLength="255"
+                    name="Name_Last"
+                    placeholder="Last Name"
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col at500:flex-row justify-center items-center at500:space-x-3 w-full">
+                <div className="w-full">
+                  <label>
+                    Email Adresss <em style={{ color: "red" }}>*</em>
+                  </label>
+                  <input
+                    type="text"
+                    maxLength="255"
+                    name="Email"
+                    placeholder="Email Address"
+                  />
+                </div>
+                <div className=" w-full">
+                  <label>
+                    Phone Number <em style={{ color: "red" }}>*</em>
+                  </label>
+                  <div className="flex gap-2 w-full">
+                    <input
+                      className="max-w-[60px]"
+                      type="text"
+                      name="PhoneNumber_countrycodeval"
+                      maxLength="10"
+                      id="international_PhoneNumber_countrycodeval"
+                      placeholder="Code"
+                    />
+                    <input
+                      type="text"
+                      name="PhoneNumber_countrycode"
+                      maxLength="20"
+                      id="international_PhoneNumber_countrycode"
+                      placeholder="Number"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-full">
+                <label>
+                  Home Address <em style={{ color: "red" }}>*</em>
+                </label>
+                <input
+                  type="text"
+                  maxLength="255"
+                  name="Address_AddressLine1"
+                  placeholder=""
+                />
+              </div>
+
+              <div className="flex flex-col at500:flex-row justify-center items-center at500:space-x-3 w-full">
+                <div className="w-full">
+                  <label>
+                    Next Of Kin First Name <em style={{ color: "red" }}>*</em>
+                  </label>
+                  <input
+                    type="text"
+                    name="SingleLine"
+                    maxLength="255"
+                    placeholder="Next Of Kin First Name"
                   />
                 </div>
 
-                <div className="flex flex-col at500:flex-row justify-center items-center at500:space-x-3 w-full">
-                  <div className="w-full">
-                    <label>
-                      Next Of Kin First Name <em style={{ color: "red" }}>*</em>
-                    </label>
-                    <input
-                      type="text"
-                      name="nextOfKinFirstName"
-                      placeholder="Next of Kin First Name"
-                      value={formData.nextOfKinFirstName}
-                      onChange={handleChange}
-                    />
-                  </div>
-                  <div className="w-full">
-                    <label>
-                      Next of Kin Last Name
-                      <em style={{ color: "red" }}>*</em>
-                    </label>
-                    <input
-                      type="text"
-                      name="nextOfKinLastName"
-                      placeholder="Next of Kin Last Name"
-                      value={formData.nextOfKinLastName}
-                      onChange={handleChange}
-                    />
-                  </div>
+                <div className="w-full">
+                  <label>
+                    Next of Kin Phone <em style={{ color: "red" }}>*</em>
+                  </label>
+                  <input
+                    type="text"
+                    name="PhoneNumber1_countrycode"
+                    maxLength="20"
+                    id="international_PhoneNumber1_countrycode"
+                    placeholder="Next of Kin Phone"
+                  />
                 </div>
               </div>
 
@@ -189,10 +177,9 @@ const SaveUrPotForm = ({ isOpen, closeOverlay }) => {
                 <input
                   className="!w-[16px] !h-[16px] rounded-sm"
                   type="checkbox"
-                  name="agreeToTerms"
-                  checked={formData.agreeToTerms}
-                  onChange={handleChange}
-                  required
+                  id="Checkbox_1"
+                  name="Checkbox"
+                  value="Agree"
                 />
                 <label className="!font-normal text-[14px]">
                   Indemnity: I hereby confirm that I am registering for PH City

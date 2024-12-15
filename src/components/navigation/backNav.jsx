@@ -16,29 +16,30 @@ const BackNav = () => {
   const isdepartmentPage = pathname.includes("/departments/");
   const isPhotoDetailsPage = pathname.includes("/photos/");
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 0);
+   useEffect(() => {
+     const handleScroll = () => {
+       setScrolled(window.scrollY > 0);
 
-      if (window.scrollY > lastScrollY) {
-        setIsScrollingUp(false); // Scrolling down
-      } else {
-        setIsScrollingUp(true); // Scrolling up
-      }
-      setLastScrollY(window.scrollY);
-    };
+       if (window.scrollY > lastScrollY) {
+         setIsScrollingUp(false); // Scrolling down
+       } else {
+         setIsScrollingUp(true); // Scrolling up
+       }
+       setLastScrollY(window.scrollY);
+     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [lastScrollY]);
+     window.addEventListener("scroll", handleScroll);
+     return () => {
+       window.removeEventListener("scroll", handleScroll);
+     };
+   }, [lastScrollY]);
 
-  useEffect(() => {
-    const currentPage = pathname === "/" ? "/" : pathname.substring(1);
-    setActiveLink(currentPage);
-  }, [pathname]);
-
+   useEffect(() => {
+     const currentPage = pathname === "/" ? "/" : pathname.substring(1);
+     setActiveLink(currentPage);
+   }, [pathname]);
+  
+  
   return (
     <nav
       className={`fixed top-[156px] z-[99] flex justify-center items-center at500:h-[64px] w-full ${

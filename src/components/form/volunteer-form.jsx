@@ -6,36 +6,6 @@ import Image from "./8cab461438963ef8edc175f263fda5fb.jpg";
 const volunteerForm = ({ isOpenVolunteerform, closeVolunteerform }) => {
   if (!isOpenVolunteerform) return null;
 
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    gender: "",
-    dob: "",
-    phoneNumber: "",
-    altPhoneNumber: "",
-    homeAddress: "",
-    email: "",
-    volunteerExperience: "",
-    nextOfKinFirstName: "",
-    nextOfKinLastName: "",
-    shirtSize: "",
-    agreeToTerms: false,
-  });
-
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData({
-      ...formData,
-      [name]: type === "checkbox" ? checked : value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    onClose();
-  };
-
   return (
     <div
       className="overlay1  relative flex flex-col justify-end items-end bg-cover px-[15px] sm:px-[20px] silver:px-[200px] py-[20px] h-auto w-full  overflow-hidden"
@@ -66,7 +36,20 @@ const volunteerForm = ({ isOpenVolunteerform, closeVolunteerform }) => {
             </div>
           </div>
           <div className="flex flex-col gap-[20px] w-full">
-            <form className="flex gap-[24px] flex-col" onSubmit={handleSubmit}>
+            <form
+              className="flex gap-[24px] flex-col"
+              action="https://forms.zohopublic.com/phcitywomenrunphcityw1/form/Volunteerform/formperma/Rws1TNTsPNozKqzH4Q87ZdIuwGh9OR1ARqSYdGcbGE0/htmlRecords/submit"
+              name="form"
+              id="form"
+              method="POST"
+              acceptCharset="UTF-8"
+              encType="multipart/form-data"
+            >
+              {/* Hidden Fields */}
+              <input type="hidden" name="zf_referrer_name" value="" />
+              <input type="hidden" name="zf_redirect_url" value="" />
+              <input type="hidden" name="zc_gad" value="" />
+
               <div className="flex gap-[10px] flex-col justify-center items-center w-full">
                 <div className="flex flex-col at500:flex-row justify-center items-center at500:space-x-3 w-full">
                   <div className="w-full">
@@ -75,11 +58,9 @@ const volunteerForm = ({ isOpenVolunteerform, closeVolunteerform }) => {
                     </label>
                     <input
                       type="text"
-                      name="firstName"
+                      maxLength="255"
+                      name="Name_First"
                       placeholder="First Name"
-                      value={formData.firstName}
-                      onChange={handleChange}
-                      required
                     />
                   </div>
 
@@ -89,28 +70,30 @@ const volunteerForm = ({ isOpenVolunteerform, closeVolunteerform }) => {
                     </label>
                     <input
                       type="text"
-                      name="lastName"
+                      maxLength="255"
+                      name="Name_Last"
                       placeholder="Last Name"
-                      value={formData.lastName}
-                      onChange={handleChange}
-                      required
                     />
                   </div>
+                </div>
+                <div className="w-full">
+                  <label>Other Names</label>
+                  <input
+                    type="text"
+                    maxLength="255"
+                    name="Name_Middle"
+                    placeholder="Other Names"
+                  />
                 </div>
                 <div className="flex flex-col at500:flex-row justify-center items-center at500:space-x-3 w-full">
                   <div className="w-full">
                     <label>
                       gender <em style={{ color: "red" }}>*</em>
                     </label>
-                    <select
-                      name="gender"
-                      value={formData.gender}
-                      onChange={handleChange}
-                      required
-                    >
-                      <option value="">Gender</option>
-                      <option value="male">Male</option>
-                      <option value="female">Female</option>
+                    <select name="Dropdown">
+                      <option value="-Select-">-Select-</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
                     </select>
                   </div>
 
@@ -119,12 +102,10 @@ const volunteerForm = ({ isOpenVolunteerform, closeVolunteerform }) => {
                       Date of Birth <em style={{ color: "red" }}>*</em>
                     </label>
                     <input
-                      type="date"
-                      name="dob"
-                      value={formData.dob}
-                      onChange={handleChange}
-                      className="date-input"
-                      required
+                      type="text"
+                      name="Date"
+                      maxLength="25"
+                      placeholder="dd-MMM-yyyy"
                     />
                   </div>
                 </div>
@@ -134,12 +115,11 @@ const volunteerForm = ({ isOpenVolunteerform, closeVolunteerform }) => {
                       Phone Number <em style={{ color: "red" }}>*</em>
                     </label>
                     <input
-                      type="tel"
-                      name="phoneNumber"
+                      type="text"
+                      name="PhoneNumber_countrycode"
+                      maxLength="20"
+                      id="international_PhoneNumber_countrycode"
                       placeholder="Phone Number"
-                      value={formData.phoneNumber}
-                      onChange={handleChange}
-                      required
                     />
                   </div>
                   <div className="w-full">
@@ -147,25 +127,23 @@ const volunteerForm = ({ isOpenVolunteerform, closeVolunteerform }) => {
                       Alternate Phone Number <em style={{ color: "red" }}>*</em>
                     </label>
                     <input
-                      type="tel"
-                      name="altPhoneNumber"
+                      type="text"
+                      name="PhoneNumber1_countrycode"
+                      maxLength="20"
+                      id="international_PhoneNumber1_countrycode"
                       placeholder="Alternate Phone Number"
-                      value={formData.altPhoneNumber}
-                      onChange={handleChange}
                     />
                   </div>
                 </div>
                 <div className="w-full">
                   <label>
-                    Home Address <em style={{ color: "red" }}>*</em>
+                    Current Contact Address <em style={{ color: "red" }}>*</em>
                   </label>
                   <input
                     type="text"
-                    name="homeAddress"
-                    placeholder="Home Address"
-                    value={formData.homeAddress}
-                    onChange={handleChange}
-                    required
+                    maxLength="255"
+                    name="Address_AddressLine1"
+                    placeholder="Current Contact Address"
                   />
                 </div>
                 <div className="flex flex-col at500:flex-row justify-center items-center at500:space-x-3 w-full">
@@ -174,12 +152,10 @@ const volunteerForm = ({ isOpenVolunteerform, closeVolunteerform }) => {
                       Email Adresss <em style={{ color: "red" }}>*</em>
                     </label>
                     <input
-                      type="email"
-                      name="email"
+                      type="text"
+                      maxLength="255"
+                      name="Email"
                       placeholder="Email Address"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
                     />
                   </div>
                   <div className="w-full">
@@ -187,42 +163,37 @@ const volunteerForm = ({ isOpenVolunteerform, closeVolunteerform }) => {
                       Have you volunteered before
                       <em style={{ color: "red" }}>*</em>
                     </label>
-                    <select
-                      name="volunteerExperience"
-                      value={formData.volunteerExperience}
-                      onChange={handleChange}
-                      required
-                    >
-                      <option value="">Select One</option>
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
+                    <select name="Dropdown1">
+                      <option value="-Select-">Select One</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
                     </select>
                   </div>
                 </div>
                 <div className="flex flex-col at500:flex-row justify-center items-center at500:space-x-3 w-full">
                   <div className="w-full">
                     <label>
-                      Next Of Kin First Name <em style={{ color: "red" }}>*</em>
-                    </label>
-                    <input
-                      type="text"
-                      name="nextOfKinFirstName"
-                      placeholder="Next of Kin First Name"
-                      value={formData.nextOfKinFirstName}
-                      onChange={handleChange}
-                    />
-                  </div>
-                  <div className="w-full">
-                    <label>
-                      Next of Kin Last Name
+                      Next of Kin / Guarantor First Name
                       <em style={{ color: "red" }}>*</em>
                     </label>
                     <input
                       type="text"
-                      name="nextOfKinLastName"
-                      placeholder="Next of Kin Last Name"
-                      value={formData.nextOfKinLastName}
-                      onChange={handleChange}
+                      name="SingleLine"
+                      maxLength="255"
+                      placeholder="Next of Kin First Name"
+                    />
+                  </div>
+                  <div className="w-full">
+                    <label>
+                      Next of Kin / Guarantor Phone Number
+                      <em style={{ color: "red" }}>*</em>
+                    </label>
+                    <input
+                      type="text"
+                      name="PhoneNumber2_countrycode"
+                      maxLength="20"
+                      id="international_PhoneNumber2_countrycode"
+                      placeholder="Next of Kin Phone Number"
                     />
                   </div>
                 </div>
@@ -231,32 +202,20 @@ const volunteerForm = ({ isOpenVolunteerform, closeVolunteerform }) => {
                     <label>
                       Select Shirt Size <em style={{ color: "red" }}>*</em>
                     </label>
-                    <select
-                      name="shirtSize"
-                      value={formData.shirtSize}
-                      onChange={handleChange}
-                      required
-                    >
-                      <option value="">Select One</option>
-                      <option value="small">Small</option>
-                      <option value="medium">Medium</option>
-                      <option value="large">Large</option>
-                      <option value="x-large">X-Large</option>
+                    <select name="Dropdown2">
+                      <option value="-Select-">-Select-</option>
+                      <option value="S">S</option>
+                      <option value="M">M</option>
+                      <option value="L">L</option>
+                      <option value="XL">XL</option>
+                      <option value="XXL">XXL</option>
                     </select>
                   </div>
                   <div className="w-full"></div>
                 </div>
               </div>
 
-              <div className="flex gap-[9px] justify-center items-start">
-                <input
-                  className="!w-[16px] !h-[16px] rounded-sm"
-                  type="checkbox"
-                  name="agreeToTerms"
-                  checked={formData.agreeToTerms}
-                  onChange={handleChange}
-                  required
-                />
+              <div className="flex flex-col gap-[9px] justify-center items-start">
                 <label className="!font-normal text-[14px]">
                   Indemnity: I hereby confirm that I am registering for PH City
                   Women Run and certify that I am aware of the potential hazards
@@ -269,8 +228,18 @@ const volunteerForm = ({ isOpenVolunteerform, closeVolunteerform }) => {
                   are correct and accurate. I, the undersigned, have read and
                   understood and agree to abide by the rules and regulations of
                   the Run, and grant unrestricted permission for the utilization
-                  of my likeness, encompassing photographs and video.
+                  of my likeness, encompassing photographs and video
                 </label>
+                <div className="flex gap-[9px] justify-center items-start">
+                  <input
+                    className="!w-[16px] !h-[16px] rounded-sm"
+                    type="checkbox"
+                    id="Checkbox_1"
+                    name="Checkbox"
+                    value="I Agree"
+                  />
+                  <label className="!font-normal text-[14px]">I Agree</label>
+                </div>
               </div>
               <button type="submit" className="submit-button">
                 Save Your Spot

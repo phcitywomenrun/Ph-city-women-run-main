@@ -5,36 +5,9 @@ import Image from "./8cab461438963ef8edc175f263fda5fb.jpg";
 
 const ConferenceForm = ({ isOpenConferenceform, closeConferenceform }) => {
   if (!isOpenConferenceform) return null;
-
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    gender: "",
-    dob: "",
-    phoneNumber: "",
-    altPhoneNumber: "",
-    contactAddress: "",
-    email: "",
-    companyName: "",
-    volunteerExperience: "",
-    nextOfKinFirstName: "",
-    nextOfKinLastName: "",
-    shirtSize: "",
-    agreeToTerms: false,
-  });
-
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData({
-      ...formData,
-      [name]: type === "checkbox" ? checked : value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    onClose();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Add your form submission logic here
   };
 
   return (
@@ -67,185 +40,364 @@ const ConferenceForm = ({ isOpenConferenceform, closeConferenceform }) => {
             </div>
           </div>
           <div className="flex flex-col gap-[20px] w-full">
-            <form className="flex gap-[24px] flex-col" onSubmit={handleSubmit}>
-              <div className="flex gap-[10px] flex-col justify-center items-center w-full">
-                <div className="flex flex-col at500:flex-row justify-center items-center at500:space-x-3 w-full">
-                  <div className="w-full">
-                    <label>
-                      First name <em style={{ color: "red" }}>*</em>
-                    </label>
-                    <input
-                      type="text"
-                      name="firstName"
-                      placeholder="First Name"
-                      value={formData.firstName}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
+            <form
+              className="flex gap-[24px] flex-col"
+              action="https://forms.zohopublic.com/phcitywomenrunphcityw1/form/ConferenceRegistrationForm/formperma/aI2ZEu6ptyVjO_SYoTyHKY5dhVCl0Ud8sWtYkoDr2N8/htmlRecords/submit"
+              name="form"
+              id="form"
+              method="POST"
+              acceptCharset="UTF-8"
+              encType="multipart/form-data"
+            >
+              <input type="hidden" name="zf_referrer_name" value="" />
+              <input type="hidden" name="zf_redirect_url" value="" />
+              <input type="hidden" name="zc_gad" value="" />
 
-                  <div className="w-full">
-                    <label>
-                      Last name <em style={{ color: "red" }}>*</em>
-                    </label>
-                    <input
-                      type="text"
-                      name="lastName"
-                      placeholder="Last Name"
-                      value={formData.lastName}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="flex flex-col at500:flex-row justify-center items-center at500:space-x-3 w-full">
-                  <div className="w-full">
-                    <label>
-                      gender <em style={{ color: "red" }}>*</em>
-                    </label>
-                    <select
-                      name="gender"
-                      value={formData.gender}
-                      onChange={handleChange}
-                      required
-                    >
-                      <option value="">Gender</option>
-                      <option value="male">Male</option>
-                      <option value="female">Female</option>
-                    </select>
-                  </div>
+              {/* <h2>Conference Registration Form</h2>
+              <p></p> */}
 
-                  <div className="w-full">
-                    <label>
-                      Date of Birth <em style={{ color: "red" }}>*</em>
-                    </label>
-                    <input
-                      type="date"
-                      name="dob"
-                      value={formData.dob}
-                      onChange={handleChange}
-                      className="date-input"
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="flex flex-col at500:flex-row justify-center items-center at500:space-x-3 w-full">
-                  <div className="w-full">
-                    <label>
-                      Phone Number <em style={{ color: "red" }}>*</em>
-                    </label>
-                    <input
-                      type="tel"
-                      name="phoneNumber"
-                      placeholder="Phone Number"
-                      value={formData.phoneNumber}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <div className="w-full">
-                    <label>
-                      Alternate Phone Number <em style={{ color: "red" }}>*</em>
-                    </label>
-                    <input
-                      type="tel"
-                      name="altPhoneNumber"
-                      placeholder="Alternate Phone Number"
-                      value={formData.altPhoneNumber}
-                      onChange={handleChange}
-                    />
-                  </div>
+              {/* Name Fields */}
+              <div className="flex flex-col at500:flex-row justify-center items-center at500:space-x-3 w-full">
+                <div className="w-full">
+                  <label>
+                    First Name <em style={{ color: "red" }}>*</em>
+                  </label>
+                  <input
+                    type="text"
+                    maxLength="255"
+                    name="Name_First"
+                    placeholder="First Name"
+                  />
                 </div>
 
-                <div className="flex flex-col at500:flex-row justify-center items-center at500:space-x-3 w-full">
-                  <div className="w-full">
-                    <label>
-                      Email Adresss <em style={{ color: "red" }}>*</em>
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Email Address"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <div className="w-full">
-                    <label>
-                      Organisation/Company Name{" "}
-                      <em style={{ color: "red" }}>*</em>
-                    </label>
-                    <input
-                      type="companyName"
-                      name="name"
-                      placeholder="Organisation/Company Name"
-                      value={formData.companyName}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
+                <div className="w-full">
+                  <label>
+                    Last Name <em style={{ color: "red" }}>*</em>
+                  </label>
+                  <input
+                    type="text"
+                    maxLength="255"
+                    name="Name_Last"
+                    placeholder="Last Name"
+                  />
                 </div>
+              </div>
+
+              <div className="flex flex-col at500:flex-row justify-center items-center at500:space-x-3 w-full">
+                {/* Gender Dropdown */}
+                <div className="w-full">
+                  <label>
+                    Gender <em style={{ color: "red" }}>*</em>
+                  </label>
+                  <select name="Dropdown">
+                    <option value="-Select-">-Select-</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                  </select>
+                </div>
+                {/* Date of Birth */}
+                <div className="w-full">
+                  <label>
+                    Date of Birth <em style={{ color: "red" }}>*</em>
+                  </label>
+                  <input
+                    type="text"
+                    name="Date"
+                    maxLength="25"
+                    placeholder="01-Dec-2024"
+                  />
+                </div>
+              </div>
+              {/* Phone Fields */}
+              <div className="flex flex-col at500:flex-row justify-center items-center at500:space-x-3 w-full">
+                {/*  Phone Number */}
+                <div className="w-full">
+                  <label>
+                    Phone Number <em style={{ color: "red" }}>*</em>
+                  </label>
+                  <input
+                    type="text"
+                    name="PhoneNumber_countrycode"
+                    maxLength="20"
+                    placeholder="Phone Number"
+                    id="international_PhoneNumber_countrycode"
+                  />
+                </div>
+                {/* Alternate Phone Number */}
+                <div className="w-full">
+                  <label>Alternate Phone Number</label>
+                  <input
+                    type="text"
+                    name="PhoneNumber1_countrycode"
+                    maxLength="20"
+                    placeholder="Alternate Phone Number"
+                    id="international_PhoneNumber1_countrycode"
+                  />
+                </div>
+              </div>
+
+              {/* Email Address & Organisation/Company Name Fields */}
+              <div className="flex flex-col at500:flex-row justify-center items-center at500:space-x-3 w-full">
+                {/* Email Address */}
+                <div className="w-full">
+                  <label>
+                    Email Address <em style={{ color: "red" }}>*</em>
+                  </label>
+                  <input
+                    type="text"
+                    maxLength="255"
+                    name="Email"
+                    placeholder="Email Address"
+                  />
+                </div>
+                {/* Organisation/Company Name */}
+                <div className="w-full">
+                  <label>Organisation/Company Name</label>
+                  <input
+                    type="text"
+                    maxLength="255"
+                    name="Name_Middle"
+                    fieldType={7}
+                    placeholder="Organisation/Company Name"
+                  />
+                </div>
+              </div>
+
+              {/* Address Fields */}
+              <div>
+                <label>
+                  Contact Address
+                  <input
+                    type="text"
+                    maxLength="255"
+                    name="Address_AddressLine1"
+                    placeholder="Street Address"
+                  />
+                </label>
                 <div className="flex flex-col at500:flex-row justify-center items-center at500:space-x-3 w-full">
+                  <div className="flex flex-col at500:flex-row justify-center items-center at500:space-x-3 w-full">
+                    <div className="w-full">
+                      <input
+                        type="text"
+                        maxLength="255"
+                        name="Address_City"
+                        placeholder="City"
+                      />
+                    </div>
+                    <div className="w-full">
+                      <select name="Address_Country">
+                        <option value="-Select-">Country</option>
+                        <option>Afghanistan</option>
+                        <option>Albania</option>
+                        <option>Algeria</option>
+                        <option>Andorra</option>
+                        <option>Angola</option>
+                        <option>Antigua and Barbuda</option>
+                        <option>Argentina</option>
+                        <option>Armenia</option>
+                        <option>Australia</option>
+                        <option>Austria</option>
+                        <option>Azerbaijan</option>
+                        <option>Bahamas</option>
+                        <option>Bahrain</option>
+                        <option>Bangladesh</option>
+                        <option>Barbados</option>
+                        <option>Belarus</option>
+                        <option>Belgium</option>
+                        <option>Belize</option>
+                        <option>Benin</option>
+                        <option>Bhutan</option>
+                        <option>Bolivia</option>
+                        <option>Bosnia and Herzegovina</option>
+                        <option>Botswana</option>
+                        <option>Brazil</option>
+                        <option>Brunei</option>
+                        <option>Bulgaria</option>
+                        <option>Burkina Faso</option>
+                        <option>Burundi</option>
+                        <option>Cambodia</option>
+                        <option>Cameroon</option>
+                        <option>Canada</option>
+                        <option>Cape Verde</option>
+                        <option>Chad</option>
+                        <option>Chile</option>
+                        <option>China</option>
+                        <option>Colombia</option>
+                        <option>Comoros</option>
+                        <option>Costa Rica</option>
+                        <option>Croatia</option>
+                        <option>Cuba</option>
+                        <option>Cyprus</option>
+                        <option>Czech Republic</option>
+                        <option>Denmark</option>
+                        <option>Djibouti</option>
+                        <option>Dominica</option>
+                        <option>Dominican Republic</option>
+                        <option>Ecuador</option>
+                        <option>Egypt</option>
+                        <option>El Salvador</option>
+                        <option>Estonia</option>
+                        <option>Ethiopia</option>
+                        <option>Fiji</option>
+                        <option>Finland</option>
+                        <option>France</option>
+                        <option>Germany</option>
+                        <option>Ghana</option>
+                        <option>Greece</option>
+                        <option>Grenada</option>
+                        <option>Guatemala</option>
+                        <option>Guinea</option>
+                        <option>Guyana</option>
+                        <option>Haiti</option>
+                        <option>Honduras</option>
+                        <option>Hong Kong</option>
+                        <option>Hungary</option>
+                        <option>Iceland</option>
+                        <option>India</option>
+                        <option>Indonesia</option>
+                        <option>Iran</option>
+                        <option>Iraq</option>
+                        <option>Ireland</option>
+                        <option>Israel</option>
+                        <option>Italy</option>
+                        <option>Jamaica</option>
+                        <option>Japan</option>
+                        <option>Jordan</option>
+                        <option>Kazakhstan</option>
+                        <option>Kenya</option>
+                        <option>Kiribati</option>
+                        <option>Kuwait</option>
+                        <option>Kyrgyzstan</option>
+                        <option>Laos</option>
+                        <option>Latvia</option>
+                        <option>Lebanon</option>
+                        <option>Lesotho</option>
+                        <option>Liberia</option>
+                        <option>Libya</option>
+                        <option>Liechtenstein</option>
+                        <option>Lithuania</option>
+                        <option>Luxembourg</option>
+                        <option>Macau</option>
+                        <option>Macedonia</option>
+                        <option>Madagascar</option>
+                        <option>Malawi</option>
+                        <option>Malaysia</option>
+                        <option>Maldives</option>
+                        <option>Mali</option>
+                        <option>Malta</option>
+                        <option>Mauritania</option>
+                        <option>Mauritius</option>
+                        <option>Mexico</option>
+                        <option>Moldova</option>
+                        <option>Monaco</option>
+                        <option>Mongolia</option>
+                        <option>Montenegro</option>
+                        <option>Morocco</option>
+                        <option>Mozambique</option>
+                        <option>Myanmar</option>
+                        <option>Namibia</option>
+                        <option>Nepal</option>
+                        <option>Netherlands</option>
+                        <option>New Zealand</option>
+                        <option>Nicaragua</option>
+                        <option>Nigeria</option>
+                        <option>Norway</option>
+                        <option>Oman</option>
+                        <option>Pakistan</option>
+                        <option>Panama</option>
+                        <option>Paraguay</option>
+                        <option>Peru</option>
+                        <option>Philippines</option>
+                        <option>Poland</option>
+                        <option>Portugal</option>
+                        <option>Qatar</option>
+                        <option>Romania</option>
+                        <option>Russia</option>
+                        <option>Rwanda</option>
+                        <option>Saudi Arabia</option>
+                        <option>Senegal</option>
+                        <option>Serbia</option>
+                        <option>Seychelles</option>
+                        <option>Sierra Leone</option>
+                        <option>Singapore</option>
+                        <option>Slovakia</option>
+                        <option>Slovenia</option>
+                        <option>Somalia</option>
+                        <option>South Africa</option>
+                        <option>South Korea</option>
+                        <option>Spain</option>
+                        <option>Sri Lanka</option>
+                        <option>Sudan</option>
+                        <option>Suriname</option>
+                        <option>Sweden</option>
+                        <option>Switzerland</option>
+                        <option>Syria</option>
+                        <option>Taiwan</option>
+                        <option>Tajikistan</option>
+                        <option>Tanzania</option>
+                        <option>Thailand</option>
+                        <option>Togo</option>
+                        <option>Tonga</option>
+                        <option>Tunisia</option>
+                        <option>Turkey</option>
+                        <option>Uganda</option>
+                        <option>Ukraine</option>
+                        <option>United Arab Emirates</option>
+                        <option>United Kingdom</option>
+                        <option>United States</option>
+                        <option>Uruguay</option>
+                        <option>Uzbekistan</option>
+                        <option>Vanuatu</option>
+                        <option>Vatican City</option>
+                        <option>Venezuela</option>
+                        <option>Vietnam</option>
+                        <option>Yemen</option>
+                        <option>Zambia</option>
+                        <option>Zimbabwe</option>
+                      </select>
+                    </div>
+                  </div>
                   <div className="w-full">
-                    <label>
-                      Contact Address <em style={{ color: "red" }}>*</em>
-                    </label>
                     <input
                       type="text"
-                      name="contactAddress"
-                      placeholder="Contact Address"
-                      value={formData.contactAddress}
-                      onChange={handleChange}
-                      required
+                      maxLength="255"
+                      name="Address_Region"
+                      placeholder="State/Region/Province"
                     />
-                  </div>
-                  <div className="w-full">
-                    <label>
-                      How did you hear about us
-                      <em style={{ color: "red" }}></em>
-                    </label>
-                    <select
-                      name="shirtSize"
-                      value={formData.shirtSize}
-                      onChange={handleChange}
-                     
-                    >
-                      <option value="">Select </option>
-                      <option value="Social Media">Social Media</option>
-                      <option value="A Friend">A Friend</option>
-                      <option value="Work Colleague">Work Colleague</option>
-                      <option value="Email Newsletter">Email Newsletter</option>
-                      <option value="WhatsApp group">WhatsApp group</option>
-                      <option value="Others">Others (specify)</option>
-                    </select>
                   </div>
                 </div>
               </div>
 
-              <div className="flex gap-[9px] justify-center items-start">
-                <input
-                  className="!w-[16px] !h-[16px] rounded-sm"
-                  type="checkbox"
-                  name="agreeToTerms"
-                  checked={formData.agreeToTerms}
-                  onChange={handleChange}
-                  required
-                />
-                <label className="!font-normal text-[14px]">
-                  Indemnity: I hereby confirm that I am registering for PH City
-                  Women Run and certify that I am aware of the potential hazards
-                  associated with this event. I affirm that I am in good
-                  physical condition to participate as a volunteer in said
-                  event. I shall not hold the organisers, its agents, and
-                  sponsors liable for any accident, injury, death, loss of
-                  property caused before, during, and after the race and
-                  conference. I certify that all the above particulars provided
-                  are correct and accurate. I, the undersigned, have read and
-                  understood and agree to abide by the rules and regulations of
-                  the Run, and grant unrestricted permission for the utilization
-                  of my likeness, encompassing photographs and video.
+              {/* Referral Source Dropdown */}
+              <div>
+                <label>
+                  How did you hear about us <em style={{ color: "red" }}>*</em>
                 </label>
+                <select name="Dropdown1">
+                  <option value="-Select-">-Select-</option>
+                  <option value="Social Media">Social Media</option>
+                  <option value="A Friend">A Friend</option>
+                  <option value="A Work Colleague">A Work Colleague</option>
+                  <option value="Email Newsletter">Email Newsletter</option>
+                  <option value="WhatsApp group">WhatsApp group</option>
+                </select>
+              </div>
+              <div className="flex gap-[10px] flex-col justify-center items-start w-full my-[20px]">
+                <label className="!font-normal text-[14px]">
+                  Indemnity: I, the undersigned, grant unrestricted permission
+                  for the utilization of my likeness, encompassing photographs
+                  and video.
+                </label>
+                <div className="flex gap-[9px] justify-center items-start">
+                  <input
+                    className="!w-[16px] !h-[16px] rounded-sm"
+                    type="checkbox"
+                    id="Checkbox_1"
+                    name="Checkbox"
+                    value="I Agree"
+                  />
+                  <label className="!font-normal text-[14px]">I Agree</label>
+                </div>
               </div>
               <button type="submit" className="submit-button">
                 Save Your Spot
