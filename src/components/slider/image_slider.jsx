@@ -243,13 +243,7 @@ const ImageSlider = () => {
           </div>
         ))}
       </Fade>
-      <div className="relative flex flex-col justify-center items-center w-full max-w-[1580px] px-[15px] at500:px-[40px] my-0 mx-auto z-[8]">
-        <div className="relative w-full  z-[555] cursor-pointer ">
-          <a href="#middle">
-            <GoArrowDown className="text-[#8D12AB] hover:text-[#fff] absolute right-0 bottom-[50px]  w-[57.82px] h-[57.82px] object-cover cursor-pointer" />
-          </a>
-        </div>
-      </div>
+     
     </div>
   );
 };

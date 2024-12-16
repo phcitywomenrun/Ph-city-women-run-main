@@ -34,7 +34,7 @@ const router = createBrowserRouter([
           <title>Ph Women Run</title>
           <meta
             name="description"
-            content="Experience the world with our trusted "
+            content="The 2025 PH City Women Run invites you to be part of an incredible event to empower women and young girls from all walks of life."
           />
         </Helmet>
         <App />
@@ -47,10 +47,10 @@ const router = createBrowserRouter([
     element: (
       <>
         <Helmet>
-          <title>The Powerhouse of Travel Consolidation</title>
+          <title>Run Connecting Women, Running Together </title>
           <meta
             name="description"
-            content="Unlock top travel deals, net rates, and cutting-edge technology to boost your bookings and commissions. Leverage our expert consolidator services for unmatched support and industry expertise."
+            content="An inclusive and empowering environment where women can connect, share experiences, and inspire one another."
           />
         </Helmet>
         <AboutUs />
@@ -62,10 +62,10 @@ const router = createBrowserRouter([
     element: (
       <>
         <Helmet>
-          <title>Conference - Travel Consolidation</title>
+          <title>WOMEN RUN CONFERENCE </title>
           <meta
             name="description"
-            content="Join our conference and discover how to unlock top travel deals, net rates, and cutting-edge technology to boost your bookings and commissions."
+            content="Engage in stimulating discussions that promotes active, healthy lifestyle and fosters women’s confidence and awareness."
           />
         </Helmet>
         <Conference />
@@ -77,7 +77,7 @@ const router = createBrowserRouter([
     element: (
       <>
         <Helmet>
-          <title>Latest News - Travel Industry</title>
+          <title>Latest News - On Sport Events</title>
           <meta
             name="description"
             content="Stay updated with the latest news in the travel industry. Learn about deals, trends, and innovations in travel consolidation."
@@ -95,7 +95,7 @@ const router = createBrowserRouter([
           <title>Community Events</title>
           <meta
             name="description"
-            content="Join our community events and stay connected with travel enthusiasts, professionals, and consolidators."
+            content="Join our community events and stay connected ."
           />
         </Helmet>
         <CommunityEvents />
@@ -107,10 +107,10 @@ const router = createBrowserRouter([
     element: (
       <>
         <Helmet>
-          <title>Post Detail - Travel Information</title>
+          <title>Post Detail - Ph-City-Women-Run</title>
           <meta
             name="description"
-            content="Read detailed posts on travel topics, news, and event recaps from industry leaders."
+            content="Read detailed posts on Ph-City-Women-Run, news, and event recaps from industry leaders."
           />
         </Helmet>
         <PostDetail />
@@ -125,7 +125,7 @@ const router = createBrowserRouter([
           <title>Post Events - Travel</title>
           <meta
             name="description"
-            content="Get the latest updates on upcoming travel events, conferences, and workshops hosted by industry experts."
+            content="Get the latest updates on upcoming events, conferences."
           />
         </Helmet>
         <PostEvents />
@@ -137,10 +137,10 @@ const router = createBrowserRouter([
     element: (
       <>
         <Helmet>
-          <title>Travel Gallery</title>
+          <title> Gallery</title>
           <meta
             name="description"
-            content="Explore our travel gallery and see captivating photos from destinations around the world."
+            content="Explore our Run Gallery and see captivating photos ."
           />
         </Helmet>
         <Gallery />
@@ -152,7 +152,7 @@ const router = createBrowserRouter([
     element: (
       <>
         <Helmet>
-          <title>photos Rankings</title>
+          <title>photos </title>
           <meta name="description" content="Check ." />
         </Helmet>
         <PhotosDetails />
@@ -164,11 +164,8 @@ const router = createBrowserRouter([
     element: (
       <>
         <Helmet>
-          <title>Travel Gallery</title>
-          <meta
-            name="description"
-            content="Explore our travel gallery and see captivating photos from destinations around the world."
-          />
+          <title>Our speakers</title>
+          <meta name="description" content="." />
         </Helmet>
         <Speaker />
       </>
@@ -180,10 +177,7 @@ const router = createBrowserRouter([
       <>
         <Helmet>
           <title>Schedule</title>
-          <meta
-            name="description"
-            content="Explore our travel gallery and see captivating photos from destinations around the world."
-          />
+          <meta name="description" content="." />
         </Helmet>
         <Schedule />
       </>
@@ -194,11 +188,8 @@ const router = createBrowserRouter([
     element: (
       <>
         <Helmet>
-          <title>Schedule</title>
-          <meta
-            name="description"
-            content="Explore our travel gallery and see captivating photos from destinations around the world."
-          />
+          <title>Our partners</title>
+          <meta name="description" content="" />
         </Helmet>
         <Partners />
       </>
@@ -209,11 +200,8 @@ const router = createBrowserRouter([
     element: (
       <>
         <Helmet>
-          <title>Schedule</title>
-          <meta
-            name="description"
-            content="Explore our travel gallery and see captivating photos from destinations around the world."
-          />
+          <title>Become a volunteer</title>
+          <meta name="description" content="" />
         </Helmet>
         <Volunteer />
       </>
@@ -225,10 +213,7 @@ const router = createBrowserRouter([
       <>
         <Helmet>
           <title>Volunteer Department</title>
-          <meta
-            name="description"
-            content="Explore our travel gallery and see captivating photos from destinations around the world."
-          />
+          <meta name="description" content="." />
         </Helmet>
         <VolunteerDepartment />
       </>
@@ -240,10 +225,7 @@ const router = createBrowserRouter([
       <>
         <Helmet>
           <title>Volunteer Department</title>
-          <meta
-            name="description"
-            content="Explore our travel gallery and see captivating photos from destinations around the world."
-          />
+          <meta name="description" content="" />
         </Helmet>
         <VolunteerDepartmentDetail />
       </>
@@ -278,10 +260,12 @@ const router = createBrowserRouter([
     element: (
       <>
         <Helmet>
-          <title>Contact us & get aload of our products</title>
+          <title>
+            Contact us & get aload of our events, post and conference
+          </title>
           <meta
             name="description"
-            content="Get in touch with our team for inquiries about travel consolidation services and partnerships."
+            content="Get in touch with our team for inquiries about the run, to become volunteer and conference."
           />
         </Helmet>
         <ContactUs />
@@ -294,10 +278,7 @@ const router = createBrowserRouter([
       <>
         <Helmet>
           <title>Terms And Conditions</title>
-          <meta
-            name="description"
-            content="Get in touch with our team for inquiries about travel consolidation services and partnerships."
-          />
+          <meta name="description" content="" />
         </Helmet>
         <TeamsAndCondition />
       </>

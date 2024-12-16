@@ -60,7 +60,7 @@ function SpeakerHeroSection() {
 
   return (
     <>
-      <section className=" relative  pt-[151px] flex flex-col justify-center items-start h-auto  w-full ">
+      <section className=" relative  pt-[187px] flex flex-col justify-center items-start h-auto  w-full ">
         <div className="static auto-container flex flex-col justify-center items-center w-full px-[15px] pt-[110px] at500:px-[72px] my-0 mx-auto">
           <div
             className="relative flex flex-col justify-center items-start bg-cover px-[20px] sm:px-[50px] py-[100px] h-auto w-full rounded-[24px]"

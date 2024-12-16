@@ -1,6 +1,12 @@
 import React from "react";
 import { useEffect } from "react";
-import { FaFacebook, FaInstagram, FaYoutube, FaTiktok } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaYoutube,
+  FaTiktok,
+  FaArrowUp,
+} from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import logo from "../navigation/logos/9ab71b9b81bed1d6a8cf79dfc1eb4cce.png";
 import Link from "./link";
@@ -18,10 +24,23 @@ function footer() {
   return (
     <footer
       id="down"
-      className="relative flex flex-col justify-center items-center w-full h-auto !overflow-hidden"
+      className="relative flex flex-col justify-center items-center w-full h-auto "
     >
       <section className="bg-[#1F2126] relative flex flex-col justify-center items-center w-full ">
         <div className="static z-30 w-full flex flex-col justify-center items-center max-w-[1180px] py-[50px] px-[15px] at500:px-[64px] my-0 mx-auto ">
+          {/* back to top */}
+          <div className=" z-[23] flex justify-center items-center silver:justify-end silver:items-end w-full ">
+            <span className="relative  flex justify-center items-center bottom-[69px] !text-center !right-0 bg-[#697E94] !h-[36px] !w-[158px] !py-[8px] !px-[15px]">
+              <a
+                href="#top"
+                className="back-to-top-box  flex justify-center items-center  gap-[10px] !text-[#FFFFFF] "
+              >
+                Back to top
+                <FaArrowUp className="back-to-top w-[20px] H-[20px]" />
+              </a>
+            </span>
+          </div>
+          {/* back to top */}
           <div className="flex flex-col justify-center items-center w-full ">
             <div className="flex flex-col justify-start items-start  w-full pb-[30px] ">
               <div className="flex flex-col justify-center items-start  w-full  cursor-pointer ">

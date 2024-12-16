@@ -71,7 +71,7 @@ const Navbar = ({ openOverlay }) => {
                 </a>
               </li>
             </ul>
-            <ul className="flex flex-col-reverse smipx:flex-row justify-start items-start space-x-4">
+            <ul className="flex gap-4 flex-row-reverse sm:flex-row justify-start items-start ">
               <li>
                 <a href="mailto:phcitywomenrun@gmail.com">
                   <span className="text-[#EDF5FD] text-[16px] leading-[24px] font-[126]">
@@ -79,24 +79,24 @@ const Navbar = ({ openOverlay }) => {
                   </span>
                 </a>
               </li>
-              <div className="flex flex-col smipx:flex-row justify-start items-start smipx:space-x-4">
-                <li>
+              <li className="flex flex-col smipx:flex-row justify-start items-start smipx:space-x-4">
+                <div>
                   <a href="https://www.tiktok.com/@ph.city.women.run?_t=8qrotYxit9h&_r=1">
                     <FaTiktok
                       size={19}
                       className=" text-[#FFFFFF] hover:text-[#ED3237] transition-all duration-300 ease-in-out"
                     />
                   </a>
-                </li>
-                <li>
+                </div>
+                <div>
                   <a href="https://x.com/phcitywomenrun?t=Ot9NLKru8NzQ6IT4v8raVA&s=08">
                     <FaXTwitter
                       size={19}
                       className=" text-[#FFFFFF] hover:text-[#ED3237] transition-all duration-300 ease-in-out"
                     />
                   </a>
-                </li>
-              </div>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
@@ -335,11 +335,18 @@ const Navbar = ({ openOverlay }) => {
                           className={`flex justify-start items-start w-full py-[8px]  border-soild 
                           ${
                             activeLink === "/"
-                              ? "font-extrabold border-r-[4px] border-solid border-r-[#8D12AB]"
+                              ? " border-r-[4px] border-solid border-r-[#8D12AB]"
                               : ""
                           }`}
                         >
-                          <span className="text-[#FFFFFF] capitalize">
+                          <span
+                            className={`capitalize text-gray-500
+                          ${
+                            activeLink === "/"
+                              ? "!font-bold !text-[#FFFFFF]  "
+                              : ""
+                          }`}
+                          >
                             home
                           </span>
                         </div>
@@ -356,11 +363,18 @@ const Navbar = ({ openOverlay }) => {
                           className={`flex justify-start items-start w-full py-[8px]  
                           ${
                             activeLink === "/about"
-                              ? "!font-extrabold border-r-[4px] border-solid border-r-[#8D12AB]"
+                              ? " border-r-[4px] border-solid border-r-[#8D12AB]"
                               : ""
                           }`}
                         >
-                          <span className="text-[#FFFFFF] capitalize">
+                          <span
+                            className={`capitalize text-gray-500
+                          ${
+                            activeLink === "/about"
+                              ? "!font-bold !text-[#FFFFFF]  "
+                              : ""
+                          }`}
+                          >
                             the run
                           </span>
                         </div>
@@ -377,11 +391,18 @@ const Navbar = ({ openOverlay }) => {
                           className={`flex justify-start items-start w-full py-[8px] "
                           ${
                             activeLink === "/Conference"
-                              ? "!font-extrabold border-r-[4px] border-solid border-r-[#8D12AB]"
+                              ? "border-r-[4px] border-solid border-r-[#8D12AB]"
                               : ""
                           }`}
                         >
-                          <span className="text-[#FFFFFF] capitalize">
+                          <span
+                            className={`capitalize text-gray-500
+                          ${
+                            activeLink === "/Conference"
+                              ? "!font-bold !text-[#FFFFFF]  "
+                              : ""
+                          }`}
+                          >
                             Conference
                           </span>
                         </div>
@@ -398,11 +419,18 @@ const Navbar = ({ openOverlay }) => {
                           className={`flex justify-start items-start w-full py-[8px]  
                           ${
                             activeLink === "/news"
-                              ? "!font-extrabold border-r-[4px] border-solid border-r-[#8D12AB]"
+                              ? "border-r-[4px] border-solid border-r-[#8D12AB]"
                               : ""
                           }`}
                         >
-                          <span className="text-[#FFFFFF] capitalize">
+                          <span
+                            className={`capitalize text-gray-500
+                          ${
+                            activeLink === "/news"
+                              ? "!font-bold !text-[#FFFFFF]  "
+                              : ""
+                          }`}
+                          >
                             news
                           </span>
                         </div>
@@ -419,11 +447,18 @@ const Navbar = ({ openOverlay }) => {
                           className={`flex justify-start items-start w-full py-[8px] 
                           ${
                             activeLink === "/post-Events"
-                              ? "!font-extrabold border-r-[4px] border-solid border-r-[#8D12AB]"
+                              ? " border-r-[4px] border-solid border-r-[#8D12AB]"
                               : ""
                           }`}
                         >
-                          <span className="text-[#FFFFFF] capitalize">
+                          <span
+                            className={`capitalize text-gray-500
+                          ${
+                            activeLink === "/post-Events"
+                              ? "!font-bold !text-[#FFFFFF]  "
+                              : ""
+                          }`}
+                          >
                             post Events
                           </span>
                         </div>
@@ -440,11 +475,18 @@ const Navbar = ({ openOverlay }) => {
                           className={`flex justify-start items-start w-full py-[8px] border-soild
                           ${
                             activeLink === "/volunteer"
-                              ? "!font-extrabold border-r-[4px] border-solid border-r-[#8D12AB]"
+                              ? " border-r-[4px] border-solid border-r-[#8D12AB]"
                               : ""
                           }`}
                         >
-                          <span className="text-[#FFFFFF] capitalize">
+                          <span
+                            className={`capitalize text-gray-500
+                          ${
+                            activeLink === "/volunteer"
+                              ? "!font-bold !text-[#FFFFFF]  "
+                              : ""
+                          }`}
+                          >
                             volunteer
                           </span>
                         </div>
