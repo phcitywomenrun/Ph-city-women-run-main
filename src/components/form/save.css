@@ -151,19 +151,10 @@ form select:focus {
 }
 
 /* Close button styling */
-.form-container .close-button {
-  position: absolute !important;
-  top: 10px !important;
-  right: 10px !important;
-  background: none !important;
-  border: none !important;
-  font-size: 20px !important;
-  cursor: pointer !important;
+ .close-button {
+  
   z-index: 999999;
 }
 
-.form-container .close-button:hover {
-  background: none !important;
-}
 
 
