@@ -25,7 +25,7 @@ const ConferenceForm = ({ isOpenConferenceform, closeConferenceform }) => {
       <AiOutlineClose
         onClick={closeConferenceform}
         size={30}
-        className=" absolute top-5 right-10 text-[#FFFFFF] cursor-pointer"
+        className="close-button absolute top-5 right-10 text-[#FFFFFF] cursor-pointer"
       />
       <div className="flex justify-center items-center py-[70px]  my-0 mx-auto  w-full h-auto">
         <div className="form-container !pt-[40px] silver:!px-[50px]">
