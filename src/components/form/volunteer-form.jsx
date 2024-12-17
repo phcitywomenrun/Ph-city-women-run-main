@@ -10,8 +10,8 @@ const volunteerForm = ({ isOpenVolunteerform, closeVolunteerform }) => {
     <div
       className="overlay1  relative flex flex-col justify-end items-end bg-cover px-[15px] sm:px-[20px] silver:px-[200px] py-[20px] h-auto w-full  overflow-hidden"
       style={{
-        backgroundImage: `url(${Image})`,
-        backgroundColor: "#000000CC",
+        // backgroundImage: `url(${Image})`,
+        backgroundColor: "#000000",
         backgroundBlendMode: "multiply",
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -27,11 +27,11 @@ const volunteerForm = ({ isOpenVolunteerform, closeVolunteerform }) => {
         <div className="form-container !pt-[40px] silver:!px-[50px]">
           <div className="flex justify-between items-center w-full  ">
             <div className="flex flex-col justify-center items-center w-full">
-              <h2 className=" sm:text-[40px] leading-[52px] text-[#FFFFFF] !font-[176]">
-                Come Work With Us
+              <h2 className=" sm:text-[30px] leading-[52px] text-[#FFFFFF] !font-[176]">
+                Volunteer with us
               </h2>
               <p className="text-[16px] text-[#101828] ">
-                Register to get Started and participate
+                Register to volunteer
               </p>
             </div>
           </div>
@@ -173,14 +173,14 @@ const volunteerForm = ({ isOpenVolunteerform, closeVolunteerform }) => {
                 <div className="flex flex-col at500:flex-row justify-center items-center at500:space-x-3 w-full">
                   <div className="w-full">
                     <label>
-                      Next of Kin / Guarantor First Name
+                      Next of Kin / Guarantor
                       <em style={{ color: "red" }}>*</em>
                     </label>
                     <input
                       type="text"
                       name="SingleLine"
                       maxLength="255"
-                      placeholder="Next of Kin First Name"
+                      placeholder="Next of Kin Name"
                     />
                   </div>
                   <div className="w-full">
@@ -216,19 +216,25 @@ const volunteerForm = ({ isOpenVolunteerform, closeVolunteerform }) => {
               </div>
 
               <div className="flex flex-col gap-[9px] justify-center items-start">
-                <label className="!font-normal text-[14px]">
-                  Indemnity: I hereby confirm that I am registering for PH City
-                  Women Run and certify that I am aware of the potential hazards
-                  associated with this event. I affirm that I am in good
-                  physical condition to participate as a volunteer in said
-                  event. I shall not hold the organisers, its agents, and
-                  sponsors liable for any accident, injury, death, loss of
-                  property caused before, during, and after the race and
-                  conference. I certify that all the above particulars provided
-                  are correct and accurate. I, the undersigned, have read and
-                  understood and agree to abide by the rules and regulations of
-                  the Run, and grant unrestricted permission for the utilization
-                  of my likeness, encompassing photographs and video
+                <label className="!font-normal text-[14px] lowercase">
+                  <strong>Indemnity:</strong>{" "}
+                  <span className=" capitalize">I</span> hereby confirm that I
+                  am registering for
+                  <strong className="uppercase"> PH City Women Run</strong> and
+                  certify that I am aware of the potential hazards associated
+                  with this event. I affirm that I am in good physical condition
+                  to participate as a volunteer in said event. I shall not hold
+                  the organisers, its agents, and sponsors liable for any
+                  accident, injury, death, loss of property caused before,
+                  during, and after the race and conference. I certify that all
+                  the above particulars provided are correct and accurate.{" "}
+                  <br />
+                  <br />
+                  <span className=" capitalize">I</span>, the undersigned, have
+                  read and understood and agree to abide by the rules and
+                  regulations of the Run, and grant unrestricted permission for
+                  the utilization of my likeness, encompassing photographs and
+                  video.
                 </label>
                 <div className="flex gap-[9px] justify-center items-start">
                   <input

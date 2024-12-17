@@ -61,7 +61,7 @@ const PartnerHeroSection = () => {
   return (
     <>
       <section className=" relative pt-[151px] flex flex-col justify-center items-start h-auto  w-full ">
-        <div className="static auto-container flex flex-col justify-center items-center w-full py-[110px] at500:px-[72px] my-0 mx-auto">
+        <div className="static auto-container flex flex-col justify-center items-center w-full pt-[110px] at500:px-[72px] my-0 mx-auto">
           <div
             className="relative flex flex-col justify-center items-start bg-cover px-[20px] sm:px-[50px] py-[100px] h-auto w-full at500:rounded-[24px]"
             style={{
@@ -90,7 +90,7 @@ const PartnerHeroSection = () => {
             </div>
           </div>
           <div className="flex gap-[10px] flex-col justify-center items-start w-full ">
-            <h2 className="text-[#1F2126] !text-[40px] pt-[90px] pb-[50px]">
+            <h2 className="text-[#1F2126] !text-[40px] pt-[49px] pb-[24px]">
               Strategic Partners
             </h2>
           </div>

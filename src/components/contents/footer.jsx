@@ -30,7 +30,7 @@ function footer() {
         <div className="static z-30 w-full flex flex-col justify-center items-center max-w-[1180px] py-[50px] px-[15px] at500:px-[64px] my-0 mx-auto ">
           {/* back to top */}
           <div className=" z-[23] flex justify-center items-center silver:justify-end silver:items-end w-full ">
-            <span className="relative  flex justify-center items-center bottom-[69px] !text-center !right-0 bg-[#697E94] !h-[36px] !w-[158px] !py-[8px] !px-[15px]">
+            <span className="relative  flex justify-center items-center bottom-[69px] !text-center !right-0 bg-[#6C6CF1] !h-[36px] !w-[158px] !py-[8px] !px-[15px]">
               <a
                 href="#top"
                 className="back-to-top-box  flex justify-center items-center  gap-[10px] !text-[#FFFFFF] "

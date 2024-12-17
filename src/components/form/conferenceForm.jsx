@@ -14,8 +14,8 @@ const ConferenceForm = ({ isOpenConferenceform, closeConferenceform }) => {
     <div
       className="overlay1  relative flex flex-col justify-end items-end bg-cover px-[15px] sm:px-[20px] silver:px-[200px] py-[20px] h-auto w-full  overflow-hidden"
       style={{
-        backgroundImage: `url(${Image})`,
-        backgroundColor: "#000000CC",
+        // backgroundImage: `url(${Image})`,
+        backgroundColor: "#000000",
         backgroundBlendMode: "multiply",
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -383,10 +383,11 @@ const ConferenceForm = ({ isOpenConferenceform, closeConferenceform }) => {
                 </select>
               </div>
               <div className="flex gap-[10px] flex-col justify-center items-start w-full my-[20px]">
-                <label className="!font-normal text-[14px]">
-                  Indemnity: I, the undersigned, grant unrestricted permission
-                  for the utilization of my likeness, encompassing photographs
-                  and video.
+                <label className="!font-normal text-[14px] lowercase">
+                  <strong>Indemnity:</strong>{" "}
+                  <span className=" capitalize">I</span>  the
+                  undersigned, grant unrestricted permission for the utilization
+                  of my likeness, encompassing photographs and video.
                 </label>
                 <div className="flex gap-[9px] justify-center items-start">
                   <input

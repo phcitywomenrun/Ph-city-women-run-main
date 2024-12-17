@@ -96,7 +96,6 @@ form select {
   font-size: 12.67px;
   line-height: 16px;
   font-weight: 500;
-  text-transform: capitalize;
   background-color: #ffff;
   color: #848f9f !important;
   margin-bottom: 10px;
@@ -113,7 +112,7 @@ form select:focus {
   font-weight: 500;
   color: #848f9f !important;
   outline: none;
-   text-transform: capitalize;
+  
   background-color: #e6f0ff;
   border-color: #0260ee; /* Highlight border color */
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a subtle glow */

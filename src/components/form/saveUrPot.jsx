@@ -10,8 +10,8 @@ const SaveUrPotForm = ({ isOpen, closeOverlay }) => {
     <div
       className="overlay1  relative flex flex-col justify-end items-end bg-cover px-[15px] sm:px-[20px] silver:px-[200px] py-[20px] h-auto w-full  overflow-hidden"
       style={{
-        backgroundImage: `url(${Image})`,
-        backgroundColor: "#000000CC",
+        // backgroundImage: `url(${Image})`,
+        backgroundColor: "#000000",
         backgroundBlendMode: "multiply",
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -115,14 +115,14 @@ const SaveUrPotForm = ({ isOpen, closeOverlay }) => {
                     Phone Number <em style={{ color: "red" }}>*</em>
                   </label>
                   <div className="flex gap-2 w-full">
-                    <input
+                    {/* <input
                       className="max-w-[60px]"
                       type="text"
                       name="PhoneNumber_countrycodeval"
                       maxLength="10"
                       id="international_PhoneNumber_countrycodeval"
                       placeholder="Code"
-                    />
+                    /> */}
                     <input
                       type="text"
                       name="PhoneNumber_countrycode"
@@ -149,13 +149,13 @@ const SaveUrPotForm = ({ isOpen, closeOverlay }) => {
               <div className="flex flex-col at500:flex-row justify-center items-center at500:space-x-3 w-full">
                 <div className="w-full">
                   <label>
-                    Next Of Kin First Name <em style={{ color: "red" }}>*</em>
+                    Next Of Kin Name <em style={{ color: "red" }}>*</em>
                   </label>
                   <input
                     type="text"
                     name="SingleLine"
                     maxLength="255"
-                    placeholder="Next Of Kin First Name"
+                    placeholder="Next Of Kin "
                   />
                 </div>
 
@@ -179,21 +179,24 @@ const SaveUrPotForm = ({ isOpen, closeOverlay }) => {
                   type="checkbox"
                   id="Checkbox_1"
                   name="Checkbox"
-                  value="Agree"
+                  value="I Agree"
                 />
-                <label className="!font-normal text-[14px]">
-                  Indemnity: I hereby confirm that I am registering for PH City
-                  Women Run and certify that I am aware of the potential hazards
-                  associated with this event. I affirm that I am in good
-                  physical condition and have received adequate training to
-                  partake in said event. I shall not hold the organisers, its
-                  agents, and sponsors liable for any accident, injury, death,
-                  loss of property caused before, during, and after the race. I
-                  certify that all the above particulars provided are correct
-                  and accurate. I, the undersigned, have read and understood and
-                  agree to abide by the rules and regulations of the Run, and
-                  grant unrestricted permission for the utilization of my
-                  likeness, encompassing photographs and video.
+                <label className="!font-normal text-[14px] lowercase">
+                  <strong>Indemnity:</strong> I hereby confirm that I am
+                  registering for
+                  <strong className="uppercase"> PH City Women Run</strong> and
+                  certify that I am aware of the potential hazards associated
+                  with this event. I affirm that I am in good physical condition
+                  and have received adequate training to partake in said event.
+                  I shall not hold the organisers, its agents, and sponsors
+                  liable for any accident, injury, death, loss of property
+                  caused before, during, and after the race. I certify that all
+                  the above particulars provided are correct and accurate.{" "}
+                  <br />
+                  <br /> <span className="uppercase">I</span>, the undersigned, have read and
+                  understood and agree to abide by the rules and regulations of
+                  the Run, and grant unrestricted permission for the utilization
+                  of my likeness, encompassing photographs and video.
                 </label>
               </div>
               <button type="submit" className="submit-button">

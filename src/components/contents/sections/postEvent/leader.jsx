@@ -131,14 +131,14 @@ function Leader() {
                 </div>
               )}
               <div className="relative flex flex-col justify-center items-start sm:items-center gap-[20px] sm:gap-[22px] p-[20px] w-full">
-                <div className="relative flex flex-col justify-center items-start gap-[20px] max-w-[300px]">
+                <div className="relative flex flex-col justify-center items-start gap-[20px] max-w-[440px]">
                   <div className="flex gap-[20px] flex-col justify-start items-start w-full">
                     <span className="text-[#353F50]">{leaderBoard.date}</span>
                     <div>
-                      <h5 className="mb-[10px] text-[#111E2F]">
+                      <h5 className="mb-[10px] text-[40px] text-[#111E2F]">
                         {leaderBoard.typeOfRun}
                       </h5>
-                      <span className="text-[#4E5A6C]">
+                      <span className="text-[#4E5A6C] text-[20px]">
                         {leaderBoard.locaton}
                       </span>
                       <p className="text-[20px] leading-[24.8px] text-[#848F9F]">

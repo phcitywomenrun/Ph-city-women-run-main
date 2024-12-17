@@ -203,7 +203,7 @@ function Prize() {
                   </span>
                   <div className="flex justify-center ">
                     <span className="text-[#FFFFFF] text-center text-[16px] leading-[24px] font-[84]">
-                      ₦{data.cashPrice6},000
+                      ₦{data.cashPrice6},000,000
                     </span>
                   </div>
                 </li>
