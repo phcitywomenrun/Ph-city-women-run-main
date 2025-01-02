@@ -38,6 +38,8 @@ const PurchaseShirt = () => {
         discount
         buttonText
         availableSizes
+        pickUpInfoTitle
+        pickUpInfoSubTitle
       }
     }
   `;
@@ -167,13 +169,12 @@ const PurchaseShirt = () => {
             </Button>
             <div className="flex gap-4 flex-col justify-start items-start mt-4">
               <span className="text-[#000000] text-[20px] leading-[24px]">
-                Pick Up Information
+                {post.pickUpInfoTitle}
               </span>
               <div className="flex justify-start items-start gap-2 w-full">
-                <GoTag  className="text-[#4B4B4B] text-[30px]" />
+                <GoTag className="text-[#4B4B4B] text-[30px]" />
                 <span className=" text-[#4B4B4B] text-[14px] leading-[24px]">
-                  You will be updated with information for pick-up of running
-                  shirts via email and/or our social media channels
+                  {post.pickUpInfoSubTitle}
                 </span>
               </div>
             </div>
