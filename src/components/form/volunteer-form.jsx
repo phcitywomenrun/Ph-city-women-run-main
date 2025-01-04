@@ -105,7 +105,7 @@ const volunteerForm = ({ isOpenVolunteerform, closeVolunteerform }) => {
                       type="text"
                       name="Date"
                       maxLength="25"
-                      placeholder="dd-MMM-yyyy"
+                      placeholder="01-Dec-2024"
                     />
                   </div>
                 </div>
