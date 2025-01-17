@@ -72,7 +72,7 @@ function OurPartners() {
               >
                 {ourPartners.logo && (
                   <img
-                    className="h-[64px] w-[228.57px] object-contain"
+                    className="h-auto max-h-[90px] w-[108.57px] object-cover"
                     src={ourPartners.logo.url}
                     alt=""
                   />
