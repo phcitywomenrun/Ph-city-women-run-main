@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { FaPaw } from "react-icons/fa";
-
+import LoadBlurHashImage from "../../../lazy/loadBlurHash";
 import BackNav from "../../../navigation/backNav";
 
 const DepartmentDetails = () => {
@@ -87,21 +87,33 @@ const DepartmentDetails = () => {
     return `${day}${getDaySuffix(day)} ${month} ${year}`;
   };
 
-
-
   return (
     <section className="relative pt-[120px] flex flex-col justify-center items-center w-full h-auto overflow-hidden">
       <div
         className="relative flex flex-col justify-center items-center bg-cover  h-auto w-full py-[100px] md:px-[200px]"
         style={{
-          backgroundImage: `url(${post?.coverImage.url})`,
-          backgroundColor: "#00000099",
+          // backgroundImage: `url(${post?.coverImage.url})`,
+          backgroundColor: "#5C176F",
           backgroundBlendMode: "multiply",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <div className="relative flex gap-[20px]  justify-start items-center w-full  h-auto sm:h-[320px] ">
+        <div className="relative py-[20px] flex justify-start items-center max-w-[120px] max-h-[120px]">
+          <LoadBlurHashImage
+            src={post?.coverImage.url}
+            blurHash="LEHV6nWB2yk8pyo0adR*.7kCMdnj" // Replace with actual blurhash if available
+            alt="icon"
+            className="w-full h-auto  object-cover mb-3"
+          />
+        </div>
+        <div className=" absolute flex justify-start items-start bottom-[-4px]  w-full auto-container ">
+          <span className=" w-[300px] h-[367px] relative top-[-61px] left-[44px]  flex shape15 "></span>
+        </div>
+        <div className=" absolute flex justify-end items-end bottom-[-4px]  w-full auto-container ">
+          <span className=" w-[200px] h-[267px] relative top-[-91px] left-[44px]  flex shape15 "></span>
+        </div>
+        <div className="relative flex gap-[20px]  justify-center items-center w-full  h-auto sm:h-[320px] ">
           <h4 className="text-white !font-[176] leading-[24px] sm:leading-[52px] sm:text-[40px] ">
             {post?.title}
           </h4>
@@ -123,9 +135,7 @@ const DepartmentDetails = () => {
               </p>
             </span>
           </span>
-          <div
-            className="flex w-full max-w-[851px]"
-          >
+          <div className="flex w-full max-w-[851px]">
             <p className="text-[#484848] group-hover:text-[#8D12AB] !font-[146] text-[20px] leading-[28px]">
               {post?.content}
             </p>
