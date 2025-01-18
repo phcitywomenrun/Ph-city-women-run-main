@@ -68,7 +68,7 @@ function PartnersSection() {
               <div key={ourPartners.id} className="flex w-full">
                 {ourPartners.logo && (
                   <img
-                    className="h-auto max-h-[90px] w-[108.57px] object-cover"
+                    className="h-auto w-[200px] object-cover"
                     src={ourPartners.logo.url}
                     alt=""
                   />
