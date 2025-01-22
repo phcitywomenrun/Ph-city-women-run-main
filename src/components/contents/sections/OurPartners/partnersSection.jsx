@@ -62,13 +62,19 @@ function PartnersSection() {
   return (
     <>
       <section className="relative bg-[#F9FBFC] flex justify-center items-center w-full h-auto sm:h-[342px] overflow-hidden">
-        <div className="static gap-[24px] flex flex-col justify-center items-start w-full max-w-[1280px] px-[15px] py-[50px] at500:px-[72px] my-0 mx-auto">
-          <div className=" grid grid-cols-1 md:grid-cols-4 items-center w-full gap-x-5 gap-y-5">
-            {data.slice(0, postLimit).map((ourPartners) => (
-              <div key={ourPartners.id} className="flex w-full">
+        <div className="static gap-[24px] flex flex-col justify-center items-center w-full max-w-[1280px] px-[15px] py-[50px] at500:px-[72px] my-0 mx-auto">
+          <div className=" grid grid-cols-1 md:grid-cols-5 items-center w-full gap-x-5 gap-y-5">
+            {data.slice(0, postLimit).map((ourPartners, index, array) => (
+              <div key={ourPartners.id} className="w-[200px]">
                 {ourPartners.logo && (
                   <img
-                    className="h-auto w-[200px] object-cover"
+                    className={`w-[200px] object-cover ${
+                      index === 0
+                        ? "h-auto" // Different height for the first image
+                        : index === array.length - 1
+                        ? "h-[150px]" // Different height for the last image
+                        : "h-auto" // Default height for others
+                    }`}
                     src={ourPartners.logo.url}
                     alt=""
                   />

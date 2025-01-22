@@ -64,36 +64,24 @@ function OurPartners() {
       <section className="relative bg-[#F9FBFC] flex justify-center items-center w-full h-auto sm:h-[342px] overflow-hidden">
         <div className="static gap-[24px] flex flex-col justify-center items-center w-full max-w-[1280px] px-[15px] py-[90px] at500:px-[72px] my-0 mx-auto">
           <h4 className=" text-[#111E2F] !leading-[52px]"> Partners</h4>
-          <div className=" flex flex-col sm:flex-row justify-center items-center w-full gap-[24px]">
-            {data.slice(0, postLimit).map((ourPartners) => (
-              <div
-                key={ourPartners.id}
-                className="flex justify-center items-center w-full"
-              >
+          <div className=" grid grid-cols-1 md:grid-cols-5 items-center w-full gap-x-5 gap-y-5">
+            {data.slice(0, postLimit).map((ourPartners, index, array) => (
+              <div key={ourPartners.id} className="w-[200px]">
                 {ourPartners.logo && (
                   <img
-                    className="h-auto w-[200px] object-cover"
+                    className={`w-[200px] object-cover ${
+                      index === 0
+                        ? "h-auto" // Different height for the first image
+                        : index === array.length - 1
+                        ? "h-[150px]" // Different height for the last image
+                        : "h-auto" // Default height for others
+                    }`}
                     src={ourPartners.logo.url}
                     alt=""
                   />
                 )}
               </div>
             ))}
-            {/* <img
-              className="h-[64px] w-[54.36px] object-contain"
-              src={logoTwo}
-              alt=""
-            />
-            <img
-              className="h-[64px] w-[130.03px] object-contain"
-              src={logoThree}
-              alt=""
-            />
-            <img
-              className="h-[56px] w-[253.73px] object-contain"
-              src={logofour}
-              alt=""
-            /> */}
           </div>
           <img
             className=" absolute left-0 top-[26px] h-[480.07px] w-[150.41px] object-contain"
