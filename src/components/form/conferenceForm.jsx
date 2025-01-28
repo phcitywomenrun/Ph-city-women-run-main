@@ -114,8 +114,11 @@ const ConferenceForm = ({ isOpenConferenceform, closeConferenceform }) => {
                     onChange={(date) => setSelectedDate(date)}
                     dateFormat="dd-MMM-yyyy"
                     placeholderText="Select Date"
-                    className="border rounded p-2 !w-full !z-[99999]"
-                    name="Date" // Important: Add the `name` attribute for Zoho
+                    showYearDropdown
+                    yearDropdownItemNumber={100} // Number of years to show in the dropdown
+                    scrollableYearDropdown // Enables scrolling in the year dropdown
+                    className="border rounded p-2 w-full"
+                    name="Date" // Required for Zoho to capture the value
                   />
                 </div>
               </div>
