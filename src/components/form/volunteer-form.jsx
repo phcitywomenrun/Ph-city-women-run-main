@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import "./save.css";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import Image from "./8cab461438963ef8edc175f263fda5fb.jpg";
 
 const volunteerForm = ({ isOpenVolunteerform, closeVolunteerform }) => {
+  const [selectedDate, setSelectedDate] = useState(null);
   if (!isOpenVolunteerform) return null;
 
   return (
@@ -101,11 +104,19 @@ const volunteerForm = ({ isOpenVolunteerform, closeVolunteerform }) => {
                     <label>
                       Date of Birth <em style={{ color: "red" }}>*</em>
                     </label>
-                    <input
+                    {/* <input
                       type="text"
                       name="Date"
                       maxLength="25"
                       placeholder="01-Dec-2024"
+                    /> */}
+                    <DatePicker
+                      selected={selectedDate}
+                      onChange={(date) => setSelectedDate(date)}
+                      dateFormat="dd-MMM-yyyy"
+                      placeholderText="Select Date"
+                      className="border rounded p-2 !w-full !z-[99999]"
+                      name="Date" // Important: Add the `name` attribute for Zoho
                     />
                   </div>
                 </div>

@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import "./save.css";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import Image from "./7c709d8cb79c47c5101047070cd2dbd9.jpg";
 
 const SaveUrPotForm = ({ isOpen, closeOverlay }) => {
   if (!isOpen) return null;
+  const [selectedDate, setSelectedDate] = useState(null);
 
   return (
     <div
@@ -48,31 +51,7 @@ const SaveUrPotForm = ({ isOpen, closeOverlay }) => {
               <input type="hidden" name="zc_gad" value="" />
 
               {/* <h2>THE RUNNING EVENTS REGISTRATION FORM</h2> */}
-              <div className="flex flex-col at500:flex-row justify-center items-center at500:space-x-3 w-full">
-                <div className="w-full">
-                  <label>
-                    Select Run Category <em style={{ color: "red" }}>*</em>
-                  </label>
-                  <select name="Dropdown">
-                    <option value="-Select-" selected>
-                      Select -
-                    </option>
-                    <option value="5km Run">5km Run</option>
-                    <option value="10km Run">10km Run</option>
-                  </select>
-                </div>
-                <div className="w-full">
-                  <label>
-                    Date of Birth <em style={{ color: "red" }}>*</em>
-                  </label>
-                  <input
-                    type="text"
-                    name="Date"
-                    maxLength="25"
-                    placeholder="01-Dec-2024"
-                  />
-                </div>
-              </div>
+
               <div className="flex flex-col at500:flex-row justify-center items-center at500:space-x-3 w-full">
                 <div className="w-full">
                   <label>
@@ -172,6 +151,39 @@ const SaveUrPotForm = ({ isOpen, closeOverlay }) => {
                   />
                 </div>
               </div>
+              <div className="flex flex-col at500:flex-row justify-center items-center at500:space-x-3 w-full">
+                <div className="w-full">
+                  <label>
+                    Select Run Category <em style={{ color: "red" }}>*</em>
+                  </label>
+                  <select name="Dropdown">
+                    <option value="-Select-" selected>
+                      Select -
+                    </option>
+                    <option value="5km Run">5km Run</option>
+                    <option value="10km Run">10km Run</option>
+                  </select>
+                </div>
+                <div className="w-full !z-[99999]">
+                  <label>
+                    Date of Birth <em style={{ color: "red" }}>*</em>
+                  </label>
+                  {/* <input
+                    type="date"
+                    name="Date"
+                    maxLength="25"
+                    placeholder="01-Dec-2024"
+                  /> */}
+                  <DatePicker
+                    selected={selectedDate}
+                    onChange={(date) => setSelectedDate(date)}
+                    dateFormat="dd-MMM-yyyy"
+                    placeholderText="Select Date"
+                    className="border rounded p-2 !w-full !z-[99999]"
+                    name="Date" // Important: Add the `name` attribute for Zoho
+                  />
+                </div>
+              </div>
 
               <div className="flex gap-[9px] justify-center items-start">
                 <input
@@ -193,10 +205,11 @@ const SaveUrPotForm = ({ isOpen, closeOverlay }) => {
                   caused before, during, and after the race. I certify that all
                   the above particulars provided are correct and accurate.{" "}
                   <br />
-                  <br /> <span className="uppercase">I</span>, the undersigned, have read and
-                  understood and agree to abide by the rules and regulations of
-                  the Run, and grant unrestricted permission for the utilization
-                  of my likeness, encompassing photographs and video.
+                  <br /> <span className="uppercase">I</span>, the undersigned,
+                  have read and understood and agree to abide by the rules and
+                  regulations of the Run, and grant unrestricted permission for
+                  the utilization of my likeness, encompassing photographs and
+                  video.
                 </label>
               </div>
               <button type="submit" className="submit-button">

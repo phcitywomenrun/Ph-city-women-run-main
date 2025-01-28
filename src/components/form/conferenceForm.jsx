@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import "./save.css";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import Image from "./8cab461438963ef8edc175f263fda5fb.jpg";
 
 const ConferenceForm = ({ isOpenConferenceform, closeConferenceform }) => {
+    const [selectedDate, setSelectedDate] = useState(null);
   if (!isOpenConferenceform) return null;
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -100,11 +103,19 @@ const ConferenceForm = ({ isOpenConferenceform, closeConferenceform }) => {
                   <label>
                     Date of Birth <em style={{ color: "red" }}>*</em>
                   </label>
-                  <input
+                  {/* <input
                     type="text"
                     name="Date"
                     maxLength="25"
                     placeholder="01-Dec-2024"
+                  /> */}
+                  <DatePicker
+                    selected={selectedDate}
+                    onChange={(date) => setSelectedDate(date)}
+                    dateFormat="dd-MMM-yyyy"
+                    placeholderText="Select Date"
+                    className="border rounded p-2 !w-full !z-[99999]"
+                    name="Date" // Important: Add the `name` attribute for Zoho
                   />
                 </div>
               </div>
@@ -385,9 +396,9 @@ const ConferenceForm = ({ isOpenConferenceform, closeConferenceform }) => {
               <div className="flex gap-[10px] flex-col justify-center items-start w-full my-[20px]">
                 <label className="!font-normal text-[14px] lowercase">
                   <strong>Indemnity:</strong>{" "}
-                  <span className=" capitalize">I</span>  the
-                  undersigned, grant unrestricted permission for the utilization
-                  of my likeness, encompassing photographs and video.
+                  <span className=" capitalize">I</span> the undersigned, grant
+                  unrestricted permission for the utilization of my likeness,
+                  encompassing photographs and video.
                 </label>
                 <div className="flex gap-[9px] justify-center items-start">
                   <input
