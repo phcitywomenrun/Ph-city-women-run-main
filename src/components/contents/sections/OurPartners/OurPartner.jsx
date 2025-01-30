@@ -69,7 +69,7 @@ function OurPartners() {
               <div key={ourPartners.id} className="w-[200px]">
                 {ourPartners.logo && (
                   <img
-                    className={`w-[200px] object-cover ${
+                    className={`w-[182px] object-cover ${
                       index === 0
                         ? "h-auto" // Different height for the first image
                         : index === array.length - 1
