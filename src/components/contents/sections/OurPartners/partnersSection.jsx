@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import logoOne from "../../image/logo/c1d692ddb15406642e43a33e0fc1c23e.png";
-import logoTwo from "../../image/logo/47c6482ff55474d3e027fa9031665023.png";
-import logoThree from "../../image/logo/b0b1af108d2e2689d1d674880fbe5c77.png";
-import logofour from "../../image/logo/9ab71b9b81bed1d6a8cf79dfc1eb4cce.png";
 import shape1 from "../../image/shapes/Frame 1686560676.png";
 import shape2 from "../../image/shapes/Frame 11686560754.png";
 import AOS from "aos";
@@ -68,13 +64,7 @@ function PartnersSection() {
               <div key={ourPartners.id} className="w-[200px]">
                 {ourPartners.logo && (
                   <img
-                    className={`w-[182px] object-cover ${
-                      index === 0
-                        ? "h-auto" // Different height for the first image
-                        : index === array.length - 1
-                        ? "h-[150px]" // Different height for the last image
-                        : "h-auto" // Default height for others
-                    }`}
+                    className={`w-[182px] object-cover h-auto`}
                     src={ourPartners.logo.url}
                     alt=""
                   />
