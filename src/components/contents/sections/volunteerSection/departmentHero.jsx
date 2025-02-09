@@ -78,24 +78,16 @@ const Volundepartment = ({ openVolunteerform }) => {
                 {data.title}
               </h4>
 
-              <div className="flex gap-[20px] flex-col silver:flex-row justify-center items-start rounded-[16px] silver:py-[4px]  w-full max-w-[685px]">
-                <span className="font-Geist text-[#FFFFFF] font-extrabold text-[24px] leading-[32px] silver:w-[386px]">
-                  {data.subtext}
-                </span>
-                <ScheduleCountdown targetDate={data.schedule} />
-              </div>
-
-              <div className="flex justify-start w-full at500:w-[201px]">
-                <Button onClick={openVolunteerform} size="play" className="">
-                  Register Now
-                </Button>
-              </div>
+              <ScheduleCountdown
+                targetDate={data.schedule}
+                openOverlay={openVolunteerform}
+              />
             </div>
           </div>
         </div>
       </section>
     </>
   );
-}
+};
 
 export default Volundepartment;
