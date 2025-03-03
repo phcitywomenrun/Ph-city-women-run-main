@@ -3,8 +3,7 @@ import axios from "axios";
 import shadowbackground from "../../image/homeImg/PH CITY WOMEN RUN.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
-// import Link from "./link";
+import ButtoncountDown from "../../../navigation/countdown/countprop";
 
 import Button from "../../Button";
 
@@ -91,13 +90,11 @@ const RunFast = ({ openOverlay }) => {
                       {data.title1}
                     </h4>
                     <div className="flex justify-start w-full at500:w-[201px]">
-                      <Button
-                        onClick={openOverlay}
+                      <ButtoncountDown
                         size="play"
-                        className="!bg-[#FFFFFF] !text-[#121F30]"
-                      >
-                        Save Your Spot
-                      </Button>
+                        className="!px-2 !bg-[#FFFFFF] !text-[#121F30] capitalize"
+                        buttonText="Save Your Spot"
+                      />
                     </div>
                   </span>
                 </div>
@@ -123,13 +120,11 @@ const RunFast = ({ openOverlay }) => {
                       {data.title2}
                     </h4>
                     <div className="flex justify-start w-full at500:w-[201px]">
-                      <Button
-                        onClick={openOverlay}
+                      <ButtoncountDown
                         size="play"
-                        className="!bg-[#FFFFFF] !text-[#121F30]"
-                      >
-                        Save Your Spot
-                      </Button>
+                        className="!px-2 !bg-[#FFFFFF] !text-[#121F30] capitalize"
+                        buttonText="Save Your Spot"
+                      />
                     </div>
                   </span>
                 </div>

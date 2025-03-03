@@ -4,11 +4,11 @@ import { FaFacebook, FaInstagram, FaYoutube, FaTiktok } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { AiOutlineClose } from "react-icons/ai";
 import { HiMenuAlt3 } from "react-icons/hi";
-import Button from "../contents/Button";
 import logo1 from "./logos/TRADEMARKED PH CITY WOMEN PNG 1 3.png";
 import logo2 from "./logos/156a5363dc0856d3728fb5e10c7538f4.png";
 import { Link } from "react-router-dom";
 import "@fontsource/geist-sans";
+import ButtoncountDown from "./countdown/countprop";
 
 const Navbar = ({ openOverlay }) => {
   const { pathname } = useLocation();
@@ -270,9 +270,8 @@ const Navbar = ({ openOverlay }) => {
               </Link>
 
               <li className="py-[10px] w-[159px] pl-[18px]">
-                <Button
+                <ButtoncountDown
                   size="medium"
-                  onClick={openOverlay}
                   className={`border-[1px] font-Galano border-solid capitalize ${
                     isHomePage || isTheRunPage
                       ? scrolled
@@ -280,9 +279,8 @@ const Navbar = ({ openOverlay }) => {
                         : "bg-white text-[#320101]"
                       : "bg-[#8D12AB] text-[#FFFFFF]"
                   }`}
-                >
-                  Register
-                </Button>
+                  buttonText="Register"
+                />
               </li>
             </ul>
 
@@ -320,7 +318,7 @@ const Navbar = ({ openOverlay }) => {
                     <AiOutlineClose
                       onClick={closeMenu}
                       size={20}
-                      className="text-white"
+                      className="text-white cursor-pointer"
                     />
                   </div>
                   <ul className="flex gap-2 flex-col items-start justify-center text-lg w-full pl-[20px]">
@@ -495,16 +493,11 @@ const Navbar = ({ openOverlay }) => {
 
                     <li className="w-full">
                       <div className="flex w-full pr-[20px] ">
-                        <Button
+                        <ButtoncountDown
                           size="medium"
-                          onClick={() => {
-                            openOverlay();
-                            closeMenu();
-                          }}
                           className="mt-8 bg-[#8D12AB] text-[#FFFFFF] capitalize"
-                        >
-                          Register
-                        </Button>
+                          buttonText="Register"
+                        />
                       </div>
                     </li>
                   </ul>

@@ -3,10 +3,9 @@ import "../styles/countdown.css";
 import Button from "../Button";
 
 const Countdown = ({ targetDate, openOverlay }) => {
-  // Function to calculate the time left
   const calculateTimeLeft = () => {
     const now = new Date();
-    const eventDate = new Date(targetDate); // Ensure proper date format
+    const eventDate = new Date(targetDate);
     const difference = eventDate - now;
 
     return difference > 0
@@ -16,28 +15,24 @@ const Countdown = ({ targetDate, openOverlay }) => {
           minutes: Math.floor((difference / 1000 / 60) % 60),
           seconds: Math.floor((difference / 1000) % 60),
         }
-      : {}; // Return empty object if the event has passed
+      : null; // Return null if the event has ended
   };
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+  const isEventEnded = timeLeft === null; // Check if the event has ended
 
   useEffect(() => {
     const timer = setInterval(() => {
-      const updatedTimeLeft = calculateTimeLeft();
-      setTimeLeft(updatedTimeLeft);
-      if (Object.keys(updatedTimeLeft).length === 0) {
-        setIsButtonDisabled(true); // Disable the button if the countdown has ended
-      }
+      setTimeLeft(calculateTimeLeft());
     }, 1000);
 
-    return () => clearInterval(timer); // Cleanup interval on component unmount
+    return () => clearInterval(timer);
   }, [targetDate]);
 
   return (
     <div className="countdown-container flex-col gap-[30px] silver:flex-row">
-      <div className="date silver:border-solid border-none silver:border-r-[2px] border-[#C8D2DF]">
-        <span className="font-Geist font-extrabold text-[40px] leading-[48px]">
+      <div className="flex w-full max-w-[300px] silver:border-solid border-none silver:border-r-[2px] border-[#C8D2DF]">
+        <span className="font-Geist text-left font-extrabold text-[30px] leading-[48px]">
           Not Registered?
         </span>
       </div>
@@ -51,32 +46,31 @@ const Countdown = ({ targetDate, openOverlay }) => {
             <span className="font-[84] text-left text-[14px] leading-[24px]">
               {unit.charAt(0).toUpperCase() + unit.slice(1)}
             </span>
-            <h3 className="time-value">
-              {timeLeft[unit] !== undefined ? timeLeft[unit] : "00"}
-            </h3>
+            <h3 className="time-value">{timeLeft ? timeLeft[unit] : "00"}</h3>
           </div>
         ))}
       </div>
 
-      {/* Optional: Add a message if the countdown has ended */}
-      {Object.keys(timeLeft).length === 0 && (
+      {/* Show event ended message when the countdown is over */}
+      {/* {isEventEnded && (
         <p className="text-center text-[14px] leading-[24px] text-white">
           Event has ended!
         </p>
-      )}
+      )} */}
+
       <div
         data-aos="zoom-in"
-        className="flex pt-[20px] justify-start w-full silver:w-[331px] z-40"
+        className="flex  justify-start w-full silver:w-[331px] z-40"
       >
         <Button
-          onClick={() => {
-            openOverlay();
-          }}
+          onClick={openOverlay}
           size="play"
-          className="!bg-[#5C176F]"
-          disabled={isButtonDisabled}
+          className={`!bg-[#5C176F] ${
+            isEventEnded ? "opacity-50 cursor-not-allowed !text-[14px] !px-2" : ""
+          }`}
+          disabled={isEventEnded}
         >
-          Register
+          {isEventEnded ? "Registration closed!" : "Register"}
         </Button>
       </div>
     </div>

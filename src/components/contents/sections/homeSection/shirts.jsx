@@ -80,7 +80,7 @@ function ShirtsSection() {
           <div className="relative z-10 flex flex-col justify-center items-start w-full  ">
             <div className="flex gap-[50px] z-20 flex-col lg:flex-row justify-between items-center w-full ">
               <div className="flex gap-[4px] flex-col justify-center lg:items-start w-full ">
-                <h1 className="text-white sm:text-[40px] text-center lg:text-left">
+                <h1 className="text-white sm:text-[40px] uppercase text-center lg:text-left">
                   {data.title1}
                 </h1>
                 <span className="font-[84] text-[16px] text-[#F9FBFC] leading-[24px] text-center lg:text-left lg:max-w-[376px]">
