@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import "@fontsource/geist-sans";
 import ButtoncountDown from "./countdown/countprop";
 
-const Navbar = ({ openOverlay }) => {
+const Navbar = () => {
   const { pathname } = useLocation();
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -269,10 +269,10 @@ const Navbar = ({ openOverlay }) => {
                 </li>
               </Link>
 
-              <li className="py-[10px] w-[159px] pl-[18px]">
+              <li className="text-left py-[10px] w-[159px] pl-[18px]">
                 <ButtoncountDown
                   size="medium"
-                  className={`border-[1px] font-Galano border-solid capitalize ${
+                  className={`flex justify-start border-[1px] font-Galano border-solid capitalize ${
                     isHomePage || isTheRunPage
                       ? scrolled
                         ? "bg-[#8D12AB] text-[#FFFFFF]"
@@ -491,8 +491,8 @@ const Navbar = ({ openOverlay }) => {
                       </Link>
                     </li>
 
-                    <li className="w-full">
-                      <div className="flex w-full pr-[20px] ">
+                    <li className="text-left w-full">
+                      <div className="flex justify-start w-full pr-[20px] ">
                         <ButtoncountDown
                           size="medium"
                           className="mt-8 bg-[#8D12AB] text-[#FFFFFF] capitalize"

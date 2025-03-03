@@ -38,7 +38,7 @@ const SaveUrPotForm = ({ isOpen, closeOverlay }) => {
           </div>
           <div className="flex flex-col gap-[20px] w-full">
             <form
-              className="flex gap-[20px] flex-col"
+              className="flex gap-[20px] flex-col justify-center items-start"
               action="https://forms.zohopublic.com/phcitywomenrunphcityw1/form/THERUNNINGEVENTSREGISTRATIONFORM/formperma/KtoqI_6vnk68oXQKHoHlAnE4Y5iNKrllHlPsQ4YxxKA/htmlRecords/submit"
               name="form"
               id="form"
@@ -52,8 +52,8 @@ const SaveUrPotForm = ({ isOpen, closeOverlay }) => {
 
               {/* <h2>THE RUNNING EVENTS REGISTRATION FORM</h2> */}
 
-              <div className="flex flex-col at500:flex-row justify-center items-center at500:space-x-3 w-full">
-                <div className="w-full">
+              <div className="flex flex-col at500:flex-row justify-center items-start at500:space-x-3 w-full">
+                <div className="flex flex-col justify-start w-full">
                   <label>
                     First Name <em style={{ color: "red" }}>*</em>
                   </label>

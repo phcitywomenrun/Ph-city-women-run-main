@@ -47,7 +47,7 @@ function AboutUs() {
         keywords="the run"
       />
       <div className="flex flex-col justify-center items-center relative w-full">
-        <Navbar openOverlay={openOverlay} />
+        <Navbar  />
         <SaveUrPotForm isOpen={isOpen} closeOverlay={closeOverlay} />
         <ConferenceForm
           isOpenConferenceform={isOpenConferenceform}
