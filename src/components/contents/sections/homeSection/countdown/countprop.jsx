@@ -3,15 +3,13 @@ import axios from "axios";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Countdown from "./coutDownButton";
-import SaveUrPotForm from "../../form/saveUrPot";
+
 
 function ButtoncountDown({ className, size, buttonText, open }) {
-  const [isOpen, setIsOpen] = useState(false);
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const openOverlay = () => setIsOpen(true);
-  const closeOverlay = () => setIsOpen(false);
+
 
   const hygraphEndpoint =
     "https://ap-south-1.cdn.hygraph.com/content/cm25wyi9i064707wegesycex9/master";
@@ -59,10 +57,10 @@ function ButtoncountDown({ className, size, buttonText, open }) {
   return (
     <>
       <div className="relative w-full">
-        <SaveUrPotForm isOpen={isOpen} closeOverlay={closeOverlay} />
+       
         <Countdown
           targetDate={data.schedule}
-          openOverlay={openOverlay}
+          open={open}
           className={className}
           size={size}
           buttonText={buttonText}

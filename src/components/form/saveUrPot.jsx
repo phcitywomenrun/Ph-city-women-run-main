@@ -38,7 +38,7 @@ const SaveUrPotForm = ({ isOpen, closeOverlay }) => {
           </div>
           <div className="flex flex-col gap-[20px] w-full">
             <form
-              className="flex gap-[20px] flex-col justify-center items-start"
+              className="flex gap-[20px] flex-col "
               action="https://forms.zohopublic.com/phcitywomenrunphcityw1/form/THERUNNINGEVENTSREGISTRATIONFORM/formperma/KtoqI_6vnk68oXQKHoHlAnE4Y5iNKrllHlPsQ4YxxKA/htmlRecords/submit"
               name="form"
               id="form"
@@ -157,7 +157,7 @@ const SaveUrPotForm = ({ isOpen, closeOverlay }) => {
                     Select Run Category <em style={{ color: "red" }}>*</em>
                   </label>
                   <select name="Dropdown">
-                    <option value="-Select-" selected>
+                    <option value="-Select-" select>
                       Select -
                     </option>
                     <option value="5km Run">5km Run</option>
