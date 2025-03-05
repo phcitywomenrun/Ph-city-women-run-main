@@ -5,7 +5,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import ButtoncountDown from "../homeSection/countdown/countprop";
 
-import Button from "../../Button";
+
 
 const RunFast = ({ openOverlay }) => {
   const [data, setData] = useState(null);

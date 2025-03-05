@@ -13,6 +13,7 @@ import shape2 from "../../image/shapes/Frame 1686560676.png";
 import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ButtoncountDown from "../homeSection/countdown/countprop";
 import LoadBlurHashImage from "../../../lazy/loadBlurHash";
 
 
@@ -297,9 +298,12 @@ const RaceInfo10km = ({ openOverlay }) => {
                   </Link>
                 </div>
                 <div className="flex justify-start w-full at500:w-[201px]">
-                  <Button onClick={openOverlay} size="play" className="">
-                    Register Now
-                  </Button>
+                  <ButtoncountDown
+                    open={openOverlay}
+                    size="play"
+                    className="!px-2  capitalize"
+                    buttonText="Register Now"
+                  />
                 </div>
               </div>
             </div>

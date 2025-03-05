@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import LoadBlurHashImage from "../../../lazy/loadBlurHash";
-// import Link from "./link";
+import ButtoncountDown from "../homeSection/countdown/countprop";
 
 import Button from "../../Button";
 
@@ -300,9 +300,13 @@ const RaceInfo = ({ openOverlay }) => {
                   </Link>
                 </div>
                 <div className="flex justify-start w-full at500:w-[201px]">
-                  <Button onClick={openOverlay} size="play" className="">
-                    Register Now
-                  </Button>
+                 
+                  <ButtoncountDown
+                    open={openOverlay}
+                    size="play"
+                    className="!px-2 capitalize"
+                    buttonText="Register Now"
+                  />
                 </div>
               </div>
             </div>
