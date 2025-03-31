@@ -10,14 +10,14 @@ import "aos/dist/aos.css";
 import Link from "../../link";
 
 function LeaderDetails() {
-   const { slug } = useParams();
-   const [leaderBoard, setLeaderBoard] = useState(null);
-   const [loading, setLoading] = useState(true);
-   const [error, setError] = useState(null);
+  const { slug } = useParams();
+  const [leaderBoard, setLeaderBoard] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-   const hygraphEndpoint =
-     "https://ap-south-1.cdn.hygraph.com/content/cm25wyi9i064707wegesycex9/master";
-   const query = `query GetLeaderBoardBySlug($slug: String!) {
+  const hygraphEndpoint =
+    "https://ap-south-1.cdn.hygraph.com/content/cm25wyi9i064707wegesycex9/master";
+  const query = `query GetLeaderBoardBySlug($slug: String!) {
     leaderBoard(where: { slug: $slug }) {
       id
       slug
@@ -45,29 +45,39 @@ function LeaderDetails() {
       runnerImage1 { url }
       runnerImage2 { url }
       runnerImage3 { url }
+      pos1
+      pos2
+      pos3
+      pos4
+      pos5
+      pos6 
+      pos7
+      pos8
+      pos9
+      pos10
     }
   }`;
 
-   useEffect(() => {
-     const fetchLeaderBoard = async () => {
-       try {
-         const response = await axios.post(hygraphEndpoint, {
-           query,
-           variables: { slug },
-         });
-         setLeaderBoard(response.data.data.leaderBoard);
-       } catch (err) {
-         console.error("Error fetching data:", err);
-         setError(err);
-       } finally {
-         setLoading(false);
-       }
-     };
-     fetchLeaderBoard();
-   }, [slug]);
+  useEffect(() => {
+    const fetchLeaderBoard = async () => {
+      try {
+        const response = await axios.post(hygraphEndpoint, {
+          query,
+          variables: { slug },
+        });
+        setLeaderBoard(response.data.data.leaderBoard);
+      } catch (err) {
+        console.error("Error fetching data:", err);
+        setError(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchLeaderBoard();
+  }, [slug]);
 
-   if (loading) return <p>Loading...</p>;
-   if (error) return <p>Error fetching data: {error.message}</p>;
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error fetching data: {error.message}</p>;
   return (
     <>
       <section className="relative bg-white flex justify-center items-center w-full h-auto ">
@@ -306,84 +316,54 @@ function LeaderDetails() {
                   </thead>
                   <tbody>
                     <tr>
-                      <td>1</td>
-                      <td>Alfreds Futterkiste</td>
-                      <td>23</td>
-                      <td>Germany</td>
-                      <td>500m</td>
-                      <td>12km/h</td>
+                      {leaderBoard.pos1.map((pos, index) => (
+                        <td key={index}>{pos}</td>
+                      ))}
                     </tr>
                     <tr>
-                      <td>2</td>
-                      <td>Centro comercial Moctezuma</td>
-                      <td>25</td>
-                      <td>Mexico</td>
-                      <td>480m</td>
-                      <td>11km/h</td>
+                      {leaderBoard.pos2.map((pos, index) => (
+                        <td key={index}>{pos}</td>
+                      ))}
                     </tr>
                     <tr>
-                      <td>3</td>
-                      <td>Maria Anders</td>
-                      <td>21</td>
-                      <td>USA</td>
-                      <td>550m</td>
-                      <td>13km/h</td>
+                      {leaderBoard.pos3.map((pos, index) => (
+                        <td key={index}>{pos}</td>
+                      ))}
                     </tr>
                     <tr>
-                      <td>4</td>
-                      <td>Francisco Chang</td>
-                      <td>22</td>
-                      <td>Brazil</td>
-                      <td>470m</td>
-                      <td>10km/h</td>
+                      {leaderBoard.pos4.map((pos, index) => (
+                        <td key={index}>{pos}</td>
+                      ))}
                     </tr>
                     <tr>
-                      <td>5</td>
-                      <td>Antonio Moreno</td>
-                      <td>24</td>
-                      <td>Spain</td>
-                      <td>490m</td>
-                      <td>11km/h</td>
+                      {leaderBoard.pos5.map((pos, index) => (
+                        <td key={index}>{pos}</td>
+                      ))}
                     </tr>
                     <tr>
-                      <td>6</td>
-                      <td>Thomas Hardy</td>
-                      <td>23</td>
-                      <td>UK</td>
-                      <td>510m</td>
-                      <td>12km/h</td>
+                      {leaderBoard.pos6.map((pos, index) => (
+                        <td key={index}>{pos}</td>
+                      ))}
                     </tr>
                     <tr>
-                      <td>7</td>
-                      <td>Christina Berglund</td>
-                      <td>26</td>
-                      <td>Sweden</td>
-                      <td>480m</td>
-                      <td>10km/h</td>
+                      {leaderBoard.pos7.map((pos, index) => (
+                        <td key={index}>{pos}</td>
+                      ))}
                     </tr>
                     <tr>
-                      <td>8</td>
-                      <td>Hanna Moctezuma</td>
-                      <td>27</td>
-                      <td>Mexico</td>
-                      <td>470m</td>
-                      <td>9km/h</td>
+                      {leaderBoard.pos8.map((pos, index) => (
+                        <td key={index}>{pos}</td>
+                      ))}
                     </tr>
                     <tr>
-                      <td>9</td>
-                      <td>Elizabeth Brown</td>
-                      <td>24</td>
-                      <td>Canada</td>
-                      <td>500m</td>
-                      <td>11km/h</td>
+                      {leaderBoard.pos9.map((pos, index) => (
+                        <td key={index}>{pos}</td>
+                      ))}
                     </tr>
                     <tr>
-                      <td>10</td>
-                      <td>Roland Mendel</td>
-                      <td>22</td>
-                      <td>Austria</td>
-                      <td>450m</td>
-                      <td>10km/h</td>
+                      {leaderBoard.pos10.map((pos, index) => (
+                        <td key={index}>{pos}</td>
+                      ))}
                     </tr>
                   </tbody>
                 </table>
