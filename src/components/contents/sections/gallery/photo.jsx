@@ -64,11 +64,11 @@ function Photos() {
 
   return (
     <>
-      <section className="relative pt-[250px] bg-white flex  justify-center items-center w-full h-auto  overflow-hidden">
+      <section className="relative pt-[250px]  bg-white flex flex-col  justify-center items-center w-full h-auto  overflow-hidden">
         {data.slice(0, postLimit).map((gallery) => (
           <div
             key={gallery.id}
-            className="relative gradient-border1 flex flex-col justify-center items-center w-full "
+            className="relative gradient-border1 border-b-[4px] border-b-[#594FC3] flex flex-col justify-center items-center w-full "
           >
             <div className="absolute right-0 opacity-[34%] z-0 text-center text-white text-[200px] leading-[224px] font-[176] w-[2030px]">
               {gallery.backgroundText}
